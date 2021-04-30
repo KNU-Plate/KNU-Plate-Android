@@ -40,7 +40,7 @@ public class SignupActivity extends AppCompatActivity {
         user_name = (EditText)findViewById(R.id.signup_edit1);
         display_name = (EditText)findViewById(R.id.signup_edit2);
         password = (EditText)findViewById(R.id.signup_edit3);
-        mail_address = (EditText)findViewById(R.id.signup_edit4); //ui 수정해야함
+        mail_address = (EditText)findViewById(R.id.signup_edit5); //ui 수정해야함
         signup_btn = (Button) findViewById(R.id.signup_button);
 
         signup_btn.setOnClickListener(new View.OnClickListener() {
