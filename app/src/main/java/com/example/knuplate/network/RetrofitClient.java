@@ -31,7 +31,7 @@ public class RetrofitClient {
 
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://3.35.58.40:4100/") // 서버 호스트
+                    .baseUrl("http://222.104.199.114:4100/") // 서버 호스트
                     .addConverterFactory(GsonConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
