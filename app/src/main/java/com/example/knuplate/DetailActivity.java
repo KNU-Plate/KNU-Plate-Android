@@ -19,6 +19,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.knuplate.Adapter.UriImageAdapter;
+import com.example.knuplate.Fragment.Fragment_Location;
+import com.example.knuplate.Fragment.Fragment_Menu;
+import com.example.knuplate.Fragment.Fragment_Review;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
