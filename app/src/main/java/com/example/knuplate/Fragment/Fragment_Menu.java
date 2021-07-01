@@ -1,9 +1,11 @@
 package com.example.knuplate.Fragment;
 
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -49,5 +51,6 @@ public class Fragment_Menu extends Fragment {
 
 
         return v;
+
     }
 }

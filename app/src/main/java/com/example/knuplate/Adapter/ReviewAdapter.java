@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,7 +37,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
         holder.detail_picture.setImageResource(arrayList.get(position).getDetail_picture());
         holder.detail_nick.setText(arrayList.get(position).getDetail_nick());
         holder.detail_profile.setImageResource(arrayList.get(position).getDetail_profile());
-        holder.detail_rate.setImageResource(arrayList.get(position).getDetail_rate());
+        holder.detail_rate.setRating(arrayList.get(position).getDetail_rate());
         holder.detail_review.setText(arrayList.get(position).getDetail_review());
     }
 
@@ -50,7 +51,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
     public class ReviewViewHolder extends RecyclerView.ViewHolder {
         ImageView detail_picture;
-        ImageView detail_rate;
+        RatingBar detail_rate;
         TextView detail_nick;
         ImageView detail_profile;
         TextView detail_review;
