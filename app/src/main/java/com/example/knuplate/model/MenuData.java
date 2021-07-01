@@ -1,4 +1,4 @@
-package com.example.knuplate;
+package com.example.knuplate.model;
 
 import android.widget.ProgressBar;
 

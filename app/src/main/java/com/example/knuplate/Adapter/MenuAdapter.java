@@ -1,15 +1,17 @@
-package com.example.knuplate;
+package com.example.knuplate.Adapter;
 
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.knuplate.model.MenuData;
+import com.example.knuplate.R;
 
 import java.util.ArrayList;
 

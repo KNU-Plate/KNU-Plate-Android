@@ -1,4 +1,4 @@
-package com.example.knuplate;
+package com.example.knuplate.Adapter;
 
 import android.content.Context;
 import android.net.Uri;

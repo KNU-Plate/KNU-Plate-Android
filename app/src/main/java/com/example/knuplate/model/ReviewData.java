@@ -1,4 +1,4 @@
-package com.example.knuplate;
+package com.example.knuplate.model;
 
 public class ReviewData {
     private int detail_profile;

@@ -39,4 +39,13 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    // Retrofit 
+    // Retrofit ��쇱�대����щ━
+    implementation 'com.squareup.retrofit2:retrofit:2.6.4'
+    // Gson 蹂����湲� ��쇱�대����щ━
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.4'
+    // Scalars 蹂����湲� ��쇱�대����щ━
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.4'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+}

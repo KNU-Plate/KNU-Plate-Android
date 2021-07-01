@@ -1,4 +1,4 @@
-package com.example.knuplate;
+package com.example.knuplate.Fragment;
 
 import android.os.Bundle;
 
@@ -11,6 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.knuplate.Adapter.ReviewAdapter;
+import com.example.knuplate.R;
+import com.example.knuplate.model.ReviewData;
 
 import java.util.ArrayList;
 
