@@ -27,7 +27,7 @@ public class Fragment_Menu extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.menu_fragment, container, false);
+        View v = inflater.inflate(R.layout.fragment_menu, container, false);
 
         RecyclerView recyclerView = v.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -49,5 +49,6 @@ public class Fragment_Menu extends Fragment {
 
 
         return v;
+
     }
 }

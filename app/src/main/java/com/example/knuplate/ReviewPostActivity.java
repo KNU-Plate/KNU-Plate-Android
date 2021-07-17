@@ -26,64 +26,15 @@ public class ReviewPostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_post);
 
-        ImageView review_star1 = findViewById(R.id.review_star1);
-        ImageView review_star2 = findViewById(R.id.review_star2);
-        ImageView review_star3 = findViewById(R.id.review_star3);
-        ImageView review_star4 = findViewById(R.id.review_star4);
-        ImageView review_star5 = findViewById(R.id.review_star5);
+
         ImageView review_picadd_but = findViewById(R.id.review_picadd_but);
 
         Spinner menu_spinner = findViewById(R.id.menu_spinner);
         Button menu_add_but = findViewById(R.id.menu_add_but);
         EditText review_et = findViewById(R.id.review_et);
 
-        //별점 클릭이벤트
-        review_star1.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onClick(View v) {
-                if (review_star1 != null) {
-                    review_star1.setSelected(!review_star1.isSelected());
-                }
-            }
-        });
 
-        review_star2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (review_star2 != null) {
-                    review_star2.setSelected(!review_star2.isSelected());
-                }
-            }
-        });
 
-        review_star3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (review_star3 != null) {
-                    review_star3.setSelected(!review_star3.isSelected());
-                }
-            }
-        });
-
-        review_star4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (review_star4 != null) {
-                    review_star4.setSelected(!review_star4.isSelected());
-                }
-            }
-        });
-
-        review_star5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (review_star5 != null) {
-                    review_star5.setSelected(!review_star5.isSelected());
-                }
-            }
-        });
-        //별점 클릭이벤트 end
 
         review_picadd_but.setOnClickListener(new View.OnClickListener() {
             @Override
