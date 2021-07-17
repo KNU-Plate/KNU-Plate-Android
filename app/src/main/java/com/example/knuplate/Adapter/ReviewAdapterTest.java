@@ -12,15 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.knuplate.R;
-import com.example.knuplate.model.ReviewData;
 import com.example.knuplate.model.ReviewDataTest;
 
 import java.util.ArrayList;
 
-public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>{
-    private ArrayList<ReviewData> arrayList;
+public class ReviewAdapterTest extends RecyclerView.Adapter<ReviewAdapterTest.ReviewViewHolder>{
+    private ArrayList<ReviewDataTest> arrayList;
 
-    public ReviewAdapter(ArrayList<ReviewData> arrayList) {
+    public ReviewAdapterTest(ArrayList<ReviewDataTest> arrayList) {
         this.arrayList = arrayList;
     }
 
@@ -35,11 +34,11 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
     @Override
     public void onBindViewHolder(@NonNull ReviewViewHolder holder, int position) {
-        holder.detail_picture.setImageResource(arrayList.get(position).getReview_id());
-        holder.detail_nick.setText(arrayList.get(position).getUser_id());
-        //holder.detail_profile.setImageResource(arrayList.get(position).getDetail_profile());
-        holder.detail_rate.setRating(arrayList.get(position).getEvaluate());
-        holder.detail_review.setText(arrayList.get(position).getContents());
+        holder.detail_picture.setImageResource(arrayList.get(position).getDetail_picture());
+        holder.detail_nick.setText(arrayList.get(position).getDetail_nick());
+        holder.detail_profile.setImageResource(arrayList.get(position).getDetail_profile());
+        holder.detail_rate.setRating(arrayList.get(position).getDetail_rate());
+        holder.detail_review.setText(arrayList.get(position).getDetail_review());
     }
 
 

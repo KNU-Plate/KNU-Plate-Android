@@ -13,23 +13,28 @@
         android:theme="@style/Theme.KnuPlate"
         android:usesCleartextTraffic="true">
         <activity android:name=".SettingActivity"></activity>
-        <activity android:name=".NoticeActivity" />
+        <activity android:name=".NoticeActivity" >
+
+        </activity>
         <activity android:name=".MyTabActivity" /> <!-- usesCleartextTraffic : http 접근 허용 -->
         <activity android:name=".ReviewPostActivity" />
         <activity android:name=".PostLocaActivity" />
         <activity android:name=".DetailActivity">
+
+        </activity>
+        <activity android:name=".UnivCertActivity" />
+        <activity android:name=".SigninActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UnivCertActivity" />
-        <activity android:name=".SigninActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".TitleActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RestListActivity" />
+
     </application>
 
 </manifest>
