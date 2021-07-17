@@ -32,7 +32,7 @@ public class RetrofitClient {
 
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://222.104.199.114:4100/") // 서버 호스트
+                    .baseUrl("http://210.204.36.137:4100/") // 서버 호스트
                     .addConverterFactory(GsonConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
@@ -52,6 +52,10 @@ public class RetrofitClient {
             call.enqueue(callback);
         }
 
+        if("call_mall_list".equals(gubun)){
+            Call<List<MallData>> call = service.getMallData(hashMap);
+            call.enqueue(callback);
+        }
 
     }
 
