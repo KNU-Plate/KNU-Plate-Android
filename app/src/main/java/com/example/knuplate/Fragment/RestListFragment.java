@@ -1,10 +1,10 @@
 package com.example.knuplate.Fragment;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -14,15 +14,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.knuplate.MainActivity;
+import com.example.knuplate.Adapter.RestAdapter;
+import com.example.knuplate.DetailActivity;
 import com.example.knuplate.R;
 import com.example.knuplate.model.MallData;
-import com.example.knuplate.model.UserData;
 import com.example.knuplate.network.RetrofitClient;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,32 +32,37 @@ public class RestListFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
 
-    RecyclerView completedList;
-    private String category;
+    private RecyclerView recyclerView;
+    private RestAdapter adapter;
+    private String category_name;
     private TextView textView;
+    private GridLayoutManager gridLayoutManager;
 
-    public RestListFragment(String category) {
-        // Required empty public constructor
-        this.category = category;
-    }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        category_name = getArguments().getString("category_name");
+
         View view = inflater.inflate(R.layout.fragment_rest_list, null);
-        textView = (TextView)view.findViewById(R.id.frag_tv);
-        textView.setText(category);
 
         HashMap<String, String> mallMap = new HashMap<>();
 
-        mallMap.put("category_name", category);
+        mallMap.put("category_name", category_name);
         RetrofitClient.request(cbMallList, "call_mall_list", mallMap);
+
+        recyclerView = view.findViewById(R.id.restList);
+
+        gridLayoutManager = new GridLayoutManager(getActivity(),2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+
+        adapter = new RestAdapter();
+
+        recyclerView.setAdapter(adapter);
 
         // Inflate the layout for this fragment
         return view;
@@ -75,10 +79,22 @@ public class RestListFragment extends Fragment {
 
                 for(int i=0; i<mallDataList.size(); i++){
                     Log.d(TAG, cbTAG + mallDataList.get(i).getMall_name());
+                    adapter.addItem(mallDataList.get(i));
                 }
 
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
+                adapter.setOnItemClickListener(new RestAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View v, int pos) {
+
+                        Toast.makeText(getContext(), mallDataList.get(pos).getMall_name(),Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), DetailActivity.class);
+
+                        intent.putExtra("restId", mallDataList.get(pos).getMall_id());
+                        startActivity(intent);
+                    }
+                });
+
+                adapter.notifyDataSetChanged(); //아이템이 변화함을 알림
 
             } else {
                 Log.e(TAG, cbTAG + "레트로핏 콜백 요청 실패(1) ");
@@ -88,7 +104,7 @@ public class RestListFragment extends Fragment {
 
         @Override
         public void onFailure(Call<List<MallData>> call, Throwable t) {
-            Log.e(TAG, cbTAG + "레트로핏 콜백 요청 실패(2) " + t);
+            Log.e(TAG, cbTAG + "레트로핏 콜백 요청 실패(2) " + category_name + t);
         }
     };
 }

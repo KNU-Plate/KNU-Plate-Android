@@ -29,6 +29,7 @@ public class RestListActivity extends AppCompatActivity {
         TabLayout tab = findViewById(R.id.restListTap);
 
         tab.setSelectedTabIndicatorColor(getResources().getColor(R.color.title_color));
+
         //카테고리 이름 리스트
         final List<String> tabElement = Arrays.asList("한식", "중식", "일식", "세계 음식", "카페", "양식", "술집");
 

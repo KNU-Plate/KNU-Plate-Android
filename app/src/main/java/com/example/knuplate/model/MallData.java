@@ -1,11 +1,14 @@
 package com.example.knuplate.model;
 
+import android.graphics.Bitmap;
+
 public class MallData {
     String mall_id;
     String mall_name;
     String category_name;
-    String evaluate_average;
+    String rating;
     String address;
+    String thumbnail;
 
     @Override
     public String toString() {
@@ -13,8 +16,9 @@ public class MallData {
                 "mall_id='" + mall_id + '\'' +
                 ", mall_name='" + mall_name + '\'' +
                 ", category_name='" + category_name + '\'' +
-                ", evaluate_average='" + evaluate_average + '\'' +
+                ", rating='" + rating + '\'' +
                 ", address='" + address + '\'' +
+                ", thumbnail='" + thumbnail + '\'' +
                 '}';
     }
 
@@ -42,12 +46,12 @@ public class MallData {
         this.category_name = category_name;
     }
 
-    public String getEvaluate_average() {
-        return evaluate_average;
+    public String getRating() {
+        return rating;
     }
 
-    public void setEvaluate_average(String evaluate_average) {
-        this.evaluate_average = evaluate_average;
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 
     public String getAddress() {
@@ -56,5 +60,13 @@ public class MallData {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }
