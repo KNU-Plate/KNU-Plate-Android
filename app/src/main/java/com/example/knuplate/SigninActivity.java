@@ -33,13 +33,10 @@ public class SigninActivity extends AppCompatActivity {
         EditText user_name = findViewById(R.id.signin_edit1);
         EditText password = findViewById(R.id.signin_edit2);
 
-        signin_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loginMap.put("user_name", user_name.getText().toString());
-                loginMap.put("password", password.getText().toString());
-                RetrofitClient.request(cbLogin, "call_login", loginMap);
-            }
+        signin_button.setOnClickListener(view -> {
+            loginMap.put("user_name", user_name.getText().toString());
+            loginMap.put("password", password.getText().toString());
+            RetrofitClient.request(cbLogin, "call_login", loginMap);
         });
     }
 
@@ -52,7 +49,7 @@ public class SigninActivity extends AppCompatActivity {
             if (response.isSuccessful()) {
                 UserData userData = response.body();
 
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(),RestListActivity.class);
                 startActivity(intent);
 
             } else {

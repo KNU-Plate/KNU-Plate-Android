@@ -70,13 +70,13 @@ public class SignupActivity extends AppCompatActivity {
 
             } else {
                 Log.e(TAG, cbTAG + "레트로핏 콜백 요청 실패(1) ");
-                Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "회원가입 실패", Toast.LENGTH_SHORT).show();
             }
         }
 
         @Override
         public void onFailure(Call call, Throwable t) {
-
+            Log.e(TAG, cbTAG + "레트로핏 콜백 요청 실패(2) "+t);
         }
     };
 }

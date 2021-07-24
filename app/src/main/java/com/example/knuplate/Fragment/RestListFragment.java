@@ -89,7 +89,7 @@ public class RestListFragment extends Fragment {
                         Toast.makeText(getContext(), mallDataList.get(pos).getMall_name(),Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getActivity(), DetailActivity.class);
 
-                        intent.putExtra("restId", mallDataList.get(pos).getMall_id());
+                        intent.putExtra("mall_id", mallDataList.get(pos).getMall_id());
                         startActivity(intent);
                     }
                 });

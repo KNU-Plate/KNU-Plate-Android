@@ -57,6 +57,13 @@ public class RetrofitClient {
             call.enqueue(callback);
         }
 
+        if("call_mall_detail".equals(gubun)){
+            String mallId = hashMap.get("mall_id");
+            Integer mallId_Int = Integer.parseInt(mallId);
+            Call<MallDetailData> call = service.getMallDetailData(mallId_Int);
+            call.enqueue(callback);
+        }
+
     }
 
 
