@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="설정"
+                android:fontFamily="@font/seoulnamsancb"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/black"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line_divider"
+            android:layout_marginBottom="5dp"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/signin_edit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_design_1"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="10dp"
+                android:hint=" 닉네임"
+                android:fontFamily="@font/seoulnamsancb"
+                android:textColorHint="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/signin_edit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_design_1"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="10dp"
+                android:hint=" 비밀번호"
+                android:fontFamily="@font/seoulnamsancb"
+                android:textColorHint="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:inputType="textPassword"
+                android:padding="10dp"/>
+        </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/setting_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="로그아웃"
+        android:fontFamily="@font/seoulnamsancb"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/title_color"
+        />
+
+    <TextView
+        android:id="@+id/setting_signout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="회원탈퇴"
+        android:fontFamily="@font/seoulnamsancb"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/title_color"
+        />
+    </LinearLayout>
+</ScrollView>

@@ -1,57 +1,87 @@
 package com.example.knuplate.model;
 
 public class ReviewData {
-    private int detail_profile;
-    private String detail_nick;
-    private int detail_picture;
-    private int detail_rate;
-    private String detail_review;
+    private int review_id;
+    private String user_id;
+    private int mail_id;
+    private int date_create;
+    private String contents;
+    private int evaluate;
+    private String review_image;
+    private String is_active;
 
-    public ReviewData(int detail_profile, String detail_nick, int detail_picture, int detail_rate, String detail_review) {
-        this.detail_profile = detail_profile;
-        this.detail_nick = detail_nick;
-        this.detail_picture = detail_picture;
-        this.detail_rate = detail_rate;
-        this.detail_review = detail_review;
+    public ReviewData(int review_id, String user_id, int mail_id, int date_create, String contents, int evaluate, String review_image, String is_active) {
+        this.review_id = review_id;
+        this.user_id = user_id;
+        this.mail_id = mail_id;
+        this.date_create = date_create;
+        this.contents = contents;
+        this.evaluate = evaluate;
+        this.review_image = review_image;
+        this.is_active = is_active;
     }
 
-    public int getDetail_profile() {
-        return detail_profile;
+    public int getReview_id() {
+        return review_id;
     }
 
-    public void setDetail_profile(int detail_profile) {
-        this.detail_profile = detail_profile;
+    public void setReview_id(int review_id) {
+        this.review_id = review_id;
     }
 
-    public String getDetail_nick() {
-        return detail_nick;
+    public String getUser_id() {
+        return user_id;
     }
 
-    public void setDetail_nick(String detail_nick) {
-        this.detail_nick = detail_nick;
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 
-    public int getDetail_picture() {
-        return detail_picture;
+    public int getMail_id() {
+        return mail_id;
     }
 
-    public void setDetail_picture(int detail_picture) {
-        this.detail_picture = detail_picture;
+    public void setMail_id(int mail_id) {
+        this.mail_id = mail_id;
     }
 
-    public int getDetail_rate() {
-        return detail_rate;
+    public int getDate_create() {
+        return date_create;
     }
 
-    public void setDetail_rate(int detail_rate) {
-        this.detail_rate = detail_rate;
+    public void setDate_create(int date_create) {
+        this.date_create = date_create;
     }
 
-    public String getDetail_review() {
-        return detail_review;
+    public String getContents() {
+        return contents;
     }
 
-    public void setDetail_review(String detail_review) {
-        this.detail_review = detail_review;
+    public void setContents(String contents) {
+        this.contents = contents;
+    }
+
+    public int getEvaluate() {
+        return evaluate;
+    }
+
+    public void setEvaluate(int evaluate) {
+        this.evaluate = evaluate;
+    }
+
+    public String getReview_image() {
+        return review_image;
+    }
+
+    public void setReview_image(String review_image) {
+        this.review_image = review_image;
+    }
+
+    public String getIs_active() {
+        return is_active;
+    }
+
+    public void setIs_active(String is_active) {
+        this.is_active = is_active;
     }
 }
