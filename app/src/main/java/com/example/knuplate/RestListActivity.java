@@ -4,11 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.knuplate.Adapter.RestListAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -43,6 +46,27 @@ public class RestListActivity extends AppCompatActivity {
                 tab.setCustomView(textView);
             }
         }).attach();
+
+        //BottomNav
+        BottomNavigationView bottom_menu = (BottomNavigationView) findViewById(R.id.bottom_menu);
+        bottom_menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.tab1:
+                        Intent intent1 = new Intent(getApplicationContext(), RestListActivity.class);
+                        startActivity(intent1);
+                        return true;
+                    case R.id.tab2:
+                        return true;
+                    case R.id.tab3:
+                        Intent intent3 = new Intent(getApplicationContext(), MyTabActivity.class);
+                        startActivity(intent3);
+                        return true;
+                }
+                return false;
+            }
+        });
 
     }
 }

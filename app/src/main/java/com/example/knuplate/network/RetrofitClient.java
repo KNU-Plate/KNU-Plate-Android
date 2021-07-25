@@ -64,6 +64,8 @@ public class RetrofitClient {
             call.enqueue(callback);
         }
 
+
+
     }
 
 
@@ -97,7 +99,7 @@ public class RetrofitClient {
         }
 
         if("call_review".equals(gubun)) {
-            Call<List<ReviewData>> call = service.getReviewData(2, 0, "N");
+            Call<List<ReviewData>> call = service.getReviewData(36, "N");
             call.enqueue(callback);
         }
     }

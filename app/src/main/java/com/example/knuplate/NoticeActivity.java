@@ -1,17 +1,19 @@
 package com.example.knuplate;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.knuplate.Adapter.NoticeAdapter;
+import com.example.knuplate.Adapter.ReviewAdapter;
 import com.example.knuplate.model.NoticeData;
-import com.example.knuplate.model.UserData;
+import com.example.knuplate.model.ReviewData;
 import com.example.knuplate.network.RetrofitClient;
 
 import java.util.ArrayList;
@@ -33,9 +35,7 @@ public class NoticeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_notice);
 
-        final HashMap<String, String> loginMap = new HashMap();
-
-        listView = findViewById(R.id.notice_lv);
+        //listView = findViewById(R.id.notice_lv);
         RetrofitClient.requestGet(cbNotice, "call_notice");
 
     }
@@ -47,6 +47,7 @@ public class NoticeActivity extends AppCompatActivity {
         @Override
         public void onResponse(Call<List<NoticeData>> call, Response<List<NoticeData>> response) {
             if (response.isSuccessful()) {
+                /*
                 List<NoticeData> noticeData = response.body();
                 //ListView 뿌려줄 ArrayList 생성
                 ArrayList<String> noticeArray = new ArrayList<>();
@@ -55,8 +56,19 @@ public class NoticeActivity extends AppCompatActivity {
                 }
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(NoticeActivity.this, R.layout.item_notice, R.id.tv_notice_contents, noticeArray);
                 listView.setAdapter(adapter);
+                 */
 
-                Toast.makeText(getApplicationContext(), "공지사항 받아오기 Complete", Toast.LENGTH_SHORT).show();
+                List<NoticeData> noticeData = response.body();
+
+                RecyclerView recyclerView = findViewById(R.id.recyclerView);
+                recyclerView.setLayoutManager(new LinearLayoutManager(NoticeActivity.this, LinearLayoutManager.VERTICAL, false));
+                //test
+                ArrayList<NoticeData> noticeList = new ArrayList<>(noticeData);
+                NoticeAdapter noticeAdapter = new NoticeAdapter(noticeList);
+
+                recyclerView.setAdapter(noticeAdapter);
+
+                Log.d(TAG, cbTAG + "데이터 받아오기 완료");
 
             } else {
                 Log.e(TAG, cbTAG + "레트로핏 콜백 요청 실패(1) ");

@@ -4,22 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class NoticeData {
 
-    @SerializedName("title")
-    private String title;
-
-    @SerializedName("contents")
-    private String contents;
-
-    @SerializedName("date_create")
-    private String date_create;
-
-    @SerializedName("notice_id")
     private int notice_id;
-
-    @SerializedName("user_id")
+    private String title;
+    private String contents;
+    private long date_create;
     private String user_id;
-
-    @SerializedName("is_active")
     private String is_active;
 
     public int getNotice_id() {
@@ -46,13 +35,7 @@ public class NoticeData {
         this.is_active = is_active;
     }
 
-    @Override
-    public String toString() {
-        return "SignUpData{" +
-                "title='" + title + '\'' +
-                ", contents='" + contents + '\'' +
-                ", date_create='" + date_create + '\'' + '}';
-    }
+
 
     public String getTitle() {
         return title;
@@ -70,12 +53,20 @@ public class NoticeData {
         this.contents = contents;
     }
 
-    public String getDate_create() {
+    public long getDate_create() {
         return date_create;
     }
 
-    public void setDate_create(String date_create) {
+    public void setDate_create(long date_create) {
         this.date_create = date_create;
+    }
+
+    @Override
+    public String toString() {
+        return "SignUpData{" +
+                "title='" + title + '\'' +
+                ", contents='" + contents + '\'' +
+                ", date_create='" + date_create + '\'' + '}';
     }
 }
 

@@ -12,14 +12,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.example.knuplate.Adapter.ReviewAdapter;
-import com.example.knuplate.Adapter.ReviewAdapterTest;
 import com.example.knuplate.R;
 import com.example.knuplate.model.ReviewData;
-import com.example.knuplate.model.ReviewDataTest;
 import com.example.knuplate.network.RetrofitClient;
 
 import java.util.ArrayList;
@@ -44,24 +41,6 @@ public class Fragment_Review extends Fragment {
 
         v = inflater.inflate(R.layout.fragment_review, container, false);
 
-        /*
-        RecyclerView recyclerView = v.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        //test
-        ArrayList<ReviewDataTest> arrayList = new ArrayList<>();
-        ReviewAdapterTest reviewAdapter = new ReviewAdapterTest(arrayList);
-        recyclerView.setAdapter(reviewAdapter);
-
-        ReviewDataTest testdata = new ReviewDataTest(R.drawable.profile_icon_default, "testdata1", R.drawable.testpicture, 3, "test1");
-        ReviewDataTest testdata2 = new ReviewDataTest(R.drawable.location_icon, "testdata2", R.drawable.testpicture, 4, "test2");
-        ReviewDataTest testdata3 = new ReviewDataTest(R.drawable.star_rating_unfilled, "testdata3", R.drawable.testpicture, 1, "test3");
-        arrayList.add(testdata);
-        arrayList.add(testdata2);
-        arrayList.add(testdata3);
-        arrayList.add(testdata);
-        arrayList.add(testdata2);
-
-         */
 
         RetrofitClient.requestGet(cbReview, "call_review");
 

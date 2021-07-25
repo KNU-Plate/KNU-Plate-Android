@@ -36,7 +36,7 @@ public class Fragment_Menu extends Fragment {
         MenuAdapter menuAdapter = new MenuAdapter(arrayList);
         recyclerView.setAdapter(menuAdapter);
 
-        MenuData testdata1 = new MenuData("TestData1", 80);
+        MenuData testdata1 = new MenuData("TestData1", 100);
         MenuData testdata2 = new MenuData("TestData2", 20);
         MenuData testdata3 = new MenuData("TestData3", 38);
         arrayList.add(testdata1);

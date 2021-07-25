@@ -1,5 +1,6 @@
 package com.example.knuplate;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,7 @@ import com.example.knuplate.Fragment.Fragment_Menu;
 import com.example.knuplate.Fragment.Fragment_Review;
 import com.example.knuplate.model.MallDetailData;
 import com.example.knuplate.network.RetrofitClient;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -62,6 +64,27 @@ public class DetailActivity extends AppCompatActivity {
         mallName = findViewById(R.id.name_text_detail);
         mallLocated = findViewById(R.id.locate_text_detail);
         mallCategory = findViewById(R.id.foodCategory_text_detail);
+
+        //BottomNav
+        BottomNavigationView bottom_menu = (BottomNavigationView) findViewById(R.id.bottom_menu);
+        bottom_menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.tab1:
+                        Intent intent1 = new Intent(getApplicationContext(), RestListActivity.class);
+                        startActivity(intent1);
+                        return true;
+                    case R.id.tab2:
+                        return true;
+                    case R.id.tab3:
+                        Intent intent3 = new Intent(getApplicationContext(), MyTabActivity.class);
+                        startActivity(intent3);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         //toolBar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

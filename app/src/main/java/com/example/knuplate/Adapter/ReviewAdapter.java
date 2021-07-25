@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.knuplate.R;
 import com.example.knuplate.model.ReviewData;
-import com.example.knuplate.model.ReviewDataTest;
 
 import java.util.ArrayList;
 
@@ -35,7 +34,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
     @Override
     public void onBindViewHolder(@NonNull ReviewViewHolder holder, int position) {
-        holder.detail_picture.setImageResource(arrayList.get(position).getReview_id());
+        //holder.detail_picture.setImageResource(arrayList.get(position).getReview_id());
         holder.detail_nick.setText(arrayList.get(position).getUser_id());
         //holder.detail_profile.setImageResource(arrayList.get(position).getDetail_profile());
         holder.detail_rate.setRating(arrayList.get(position).getEvaluate());

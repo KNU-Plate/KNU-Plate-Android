@@ -4,13 +4,13 @@ public class ReviewData {
     private int review_id;
     private String user_id;
     private int mail_id;
-    private int date_create;
+    private String date_create;
     private String contents;
     private int evaluate;
     private String review_image;
     private String is_active;
 
-    public ReviewData(int review_id, String user_id, int mail_id, int date_create, String contents, int evaluate, String review_image, String is_active) {
+    public ReviewData(int review_id, String user_id, int mail_id, String date_create, String contents, int evaluate, String review_image, String is_active) {
         this.review_id = review_id;
         this.user_id = user_id;
         this.mail_id = mail_id;
@@ -45,11 +45,11 @@ public class ReviewData {
         this.mail_id = mail_id;
     }
 
-    public int getDate_create() {
+    public String getDate_create() {
         return date_create;
     }
 
-    public void setDate_create(int date_create) {
+    public void setDate_create(String date_create) {
         this.date_create = date_create;
     }
 
