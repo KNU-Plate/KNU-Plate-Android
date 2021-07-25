@@ -39,24 +39,6 @@ public class Fragment_Menu extends Fragment {
 
         menuRecyclerView = v.findViewById(R.id.recyclerView);
         menuRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        //test
-<<<<<<< HEAD
-=======
-        ArrayList<MenuData> arrayList = new ArrayList<>();
-        MenuAdapter menuAdapter = new MenuAdapter(arrayList);
-        recyclerView.setAdapter(menuAdapter);
-
-        MenuData testdata1 = new MenuData("TestData1", 100);
-        MenuData testdata2 = new MenuData("TestData2", 20);
-        MenuData testdata3 = new MenuData("TestData3", 38);
-        arrayList.add(testdata1);
-        arrayList.add(testdata2);
-        arrayList.add(testdata3);
-        arrayList.add(testdata2);
-        arrayList.add(testdata1);
-        arrayList.add(testdata2);
-        arrayList.add(testdata3);
->>>>>>> ba5ddfcdb1fca974621ab6c9f33bbf6a313c4ca1
 
         menuAdapter = new MenuAdapter();
         menuRecyclerView.setAdapter(menuAdapter);

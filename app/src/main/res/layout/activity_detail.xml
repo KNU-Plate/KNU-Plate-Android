@@ -27,8 +27,16 @@
             android:layout_height="wrap_content"
             android:src="@drawable/line_divider"
             android:layout_marginBottom="5dp"/>
-
-
+            <TextView
+                android:id="@+id/mallTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/seoulnamsancb"
+                android:gravity="center"
+                android:text="반미리코"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
 
         <Button
@@ -39,64 +47,7 @@
             android:layout_gravity="center"
             android:text="사진선택"
             android:background="@drawable/title_button_design" />
-                <TextView
-                    android:id="@+id/mallTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/seoulnamsancb"
-                    android:gravity="center"
-                    android:text="반미리코"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
 
-
-            </androidx.appcompat.widget.Toolbar>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-            <TextView
-                android:id="@+id/name_text_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text=""
-                android:fontFamily="@font/seoulnamsancb"
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-            </androidx.appcompat.widget.Toolbar>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text=""
-                android:fontFamily="@font/seoulnamsancb"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/line_divider" />
-
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text=""
-                android:fontFamily="@font/seoulnamsancb"
-                android:textColor="#636363"
-                android:textSize="20dp"
-                />
 
             <View
                 android:layout_width="0dp"
