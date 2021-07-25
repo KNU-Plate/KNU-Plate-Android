@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/tab1"
+        app:showAsAction="always"
+        android:icon="@drawable/bar_icon_home"
+        android:enabled="true"
+        android:checked="true"
+        android:title="Home" />
+
+    <item android:id="@+id/tab2"
+        app:showAsAction="always"
+        android:icon="@drawable/bar_icon_favorite"
+        android:enabled="true"
+        android:checked="true"
+        android:title="Like" />
+
+    <item android:id="@+id/tab3"
+        app:showAsAction="always"
+        android:icon="@drawable/bar_icon_mytab"
+        android:enabled="true"
+        android:checked="true"
+        android:title="MyTab" />
+</menu>

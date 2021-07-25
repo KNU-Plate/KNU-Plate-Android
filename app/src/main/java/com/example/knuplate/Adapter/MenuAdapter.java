@@ -10,17 +10,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.knuplate.model.MenuData;
 import com.example.knuplate.R;
+import com.example.knuplate.model.ReviewData;
+import com.example.knuplate.model.dto.MenuData;
 
 import java.util.ArrayList;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder>{
-    private ArrayList<MenuData> arrayList;
-
-    public MenuAdapter(ArrayList<MenuData> arrayList) {
-        this.arrayList = arrayList;
-    }
+    private ArrayList<MenuData> menuDataList = new ArrayList<>();
 
     @NonNull
     @Override
@@ -33,8 +30,14 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
-        holder.menu_item_tv.setText(arrayList.get(position).getMenu_item_name());
-        holder.menu_item_pb.setProgress(arrayList.get(position).getMenu_item_pg());
+        holder.menu_item_tv.setText(menuDataList.get(position).getMenu_name());
+
+        //좋아요 비율 계산
+        Integer cntOfLike = menuDataList.get(position).getLike();
+        Integer cntOfDislike = menuDataList.get(position).getDislike();
+        Integer ratioOfLike = cntOfLike / (cntOfDislike+cntOfLike) *100 ;
+
+        holder.menu_item_pb.setProgress(ratioOfLike);
 
     }
 
@@ -42,9 +45,12 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     @Override
     public int getItemCount(){
     // 삼항 연산자
-        return (arrayList != null ? arrayList.size() : 0);
+        return menuDataList.size();
     }
 
+    public void addItem(MenuData menuData){
+        menuDataList.add(menuData);
+    }
 
     public class MenuViewHolder extends RecyclerView.ViewHolder {
         TextView menu_item_tv;

@@ -85,7 +85,11 @@ public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestItemViewHo
 
             //imageView.setImageBitmap(data.getThumbnail());
             tv_name.setText(data.getMall_name());
-            tv_rating.setText(data.getRating());
+
+            if (data.getEvaluate_average() != null){
+                tv_rating.setText(data.getEvaluate_average().toString());
+            }
+
         }
     }
 }

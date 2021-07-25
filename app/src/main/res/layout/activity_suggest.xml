@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:fontFamily="@font/seoulnamsancb"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/black"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line_divider"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:hint="개발자에게 건의사항 보내기"
+            android:fontFamily="@font/seoulnamsancb"
+            android:textColorHint="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:hint="(i) 혹시 건의/제안사항이 있으신가요?\n있으시면 편하게 아래에 적어서 '보내기' 를 눌러주세요.\n개발자들이 참고하여 추후 업데이트에 반영하도록 하겠습니다 :)\n\n(ii) 아니면 앱을 사용하시면서 문제가 있으셨나요?\n어떤 문제든지 알려주시면 저희 크슐랭가이드팀이 검토 후 조치하도록 하겠습니다!"
+            android:fontFamily="@font/seoulnamsancb"
+            android:textColorHint="#353535"
+            android:textSize="15dp"/>
+
+            <EditText
+                android:id="@+id/tv_suggest"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/edittext_design_1"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="start"
+                android:hint=" ex : 더 다양한 카테고리가 있었으면 좋겠어요!"
+                android:fontFamily="@font/seoulnamsancb"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:padding="15dp" />
+
+        <Button
+            android:id="@+id/bt_suggest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:background="@drawable/title_button_design"
+            android:fontFamily="@font/seoulnamsancb"
+            android:text="보내기"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+</ScrollView>

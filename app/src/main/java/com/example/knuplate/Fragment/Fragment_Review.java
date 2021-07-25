@@ -12,17 +12,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.example.knuplate.Adapter.ReviewAdapter;
-import com.example.knuplate.Adapter.ReviewAdapterTest;
 import com.example.knuplate.R;
 import com.example.knuplate.model.ReviewData;
-import com.example.knuplate.model.ReviewDataTest;
 import com.example.knuplate.network.RetrofitClient;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
@@ -32,6 +29,9 @@ import retrofit2.Response;
 public class Fragment_Review extends Fragment {
 
     View v;
+    Integer mallId;
+    RecyclerView reviewRecyclerView;
+    ReviewAdapter reviewAdapter;
 
     public static Fragment_Review newInstance() {
         return new Fragment_Review();
@@ -41,29 +41,28 @@ public class Fragment_Review extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-
         v = inflater.inflate(R.layout.fragment_review, container, false);
 
-        /*
-        RecyclerView recyclerView = v.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        //test
-        ArrayList<ReviewDataTest> arrayList = new ArrayList<>();
-        ReviewAdapterTest reviewAdapter = new ReviewAdapterTest(arrayList);
-        recyclerView.setAdapter(reviewAdapter);
+<<<<<<< HEAD
+        //DetailActivity로부터 mall ID 받아오기
+        mallId = getArguments().getInt("mall_id");
+        Log.d("cb", mallId.toString());
 
-        ReviewDataTest testdata = new ReviewDataTest(R.drawable.profile_icon_default, "testdata1", R.drawable.testpicture, 3, "test1");
-        ReviewDataTest testdata2 = new ReviewDataTest(R.drawable.location_icon, "testdata2", R.drawable.testpicture, 4, "test2");
-        ReviewDataTest testdata3 = new ReviewDataTest(R.drawable.star_rating_unfilled, "testdata3", R.drawable.testpicture, 1, "test3");
-        arrayList.add(testdata);
-        arrayList.add(testdata2);
-        arrayList.add(testdata3);
-        arrayList.add(testdata);
-        arrayList.add(testdata2);
+        //리뷰 목록 호출
+        HashMap<String,String> hashMap= new HashMap<String,String>();
+        hashMap.put("mall_id", mallId.toString()); //value를 string으로 변환해서 넘겨야 함
+        RetrofitClient.request(cbReview, "call_review", hashMap);
 
-         */
+        //리사이클러뷰 생성
+        reviewRecyclerView = v.findViewById(R.id.recyclerView);
+        reviewRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        RetrofitClient.requestGet(cbReview, "call_review");
+        //어댑터 붙이기
+        reviewAdapter = new ReviewAdapter();
+        reviewRecyclerView.setAdapter(reviewAdapter);
+=======
+>>>>>>> ba5ddfcdb1fca974621ab6c9f33bbf6a313c4ca1
+
 
         return v;
     }
@@ -75,15 +74,16 @@ public class Fragment_Review extends Fragment {
         @Override
         public void onResponse(Call<List<ReviewData>> call, Response<List<ReviewData>> response) {
             if (response.isSuccessful()) {
-                List<ReviewData> reviewData = response.body();
+                List<ReviewData> reviewDataList = response.body();
 
-                RecyclerView recyclerView = v.findViewById(R.id.recyclerView);
-                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                //test
-                ArrayList<ReviewData> arrayList = new ArrayList<>(reviewData);
-                ReviewAdapter reviewAdapter = new ReviewAdapter(arrayList);
+                Log.d(TAG, cbTAG + String.valueOf(reviewDataList.size()));
 
-                recyclerView.setAdapter(reviewAdapter);
+                for(int i=0; i<reviewDataList.size(); i++){
+                    reviewAdapter.addItem(reviewDataList.get(i));
+                }
+
+                //데이터가 변화했음을 어댑터에게 알려줌
+                reviewAdapter.notifyDataSetChanged();
 
             } else {
                 Log.e(TAG, cbTAG + "레트로핏 콜백 요청 실패(1) ");

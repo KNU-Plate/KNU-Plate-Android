@@ -64,9 +64,21 @@ public class RetrofitClient {
             call.enqueue(callback);
         }
 
+<<<<<<< HEAD
+        if("call_review".equals(gubun)){
+            String mallId = hashMap.get("mall_id");
+            Integer mallId_Int = Integer.parseInt(mallId);
+            Call<List<ReviewData>> call = service.getReviewData(mallId_Int, "N");
+            call.enqueue(callback);
+        }
+=======
+
+
     }
 
+>>>>>>> ba5ddfcdb1fca974621ab6c9f33bbf6a313c4ca1
 
+    }
 
 
     // ** 레트로핏 요청 (콜백함수, 요청구분, 파라미터) ** //
@@ -96,10 +108,13 @@ public class RetrofitClient {
             call.enqueue(callback);
         }
 
+<<<<<<< HEAD
+=======
         if("call_review".equals(gubun)) {
-            Call<List<ReviewData>> call = service.getReviewData(2, 0, "N");
+            Call<List<ReviewData>> call = service.getReviewData(36, "N");
             call.enqueue(callback);
         }
+>>>>>>> ba5ddfcdb1fca974621ab6c9f33bbf6a313c4ca1
     }
 
 }
