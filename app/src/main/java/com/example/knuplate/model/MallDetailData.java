@@ -1,7 +1,7 @@
 package com.example.knuplate.model;
 
 import com.example.knuplate.model.dto.FileFolder;
-import com.example.knuplate.model.dto.Menu;
+import com.example.knuplate.model.dto.MenuData;
 
 import java.util.Arrays;
 
@@ -18,10 +18,10 @@ public class MallDetailData
     private String user_id;
     private String date_create;
     private String reviewCount;
-    private String mall_id;
+    private Integer mall_id;
     private String contact;
     private String mall_name;
-    private Menu[] menus;
+    private MenuData[] menuData;
     private String my_recommend;
     private String evaluate_average;
     private String longitude;
@@ -44,7 +44,7 @@ public class MallDetailData
                 ", mall_id='" + mall_id + '\'' +
                 ", contact='" + contact + '\'' +
                 ", mall_name='" + mall_name + '\'' +
-                ", menus=" + Arrays.toString(menus) +
+                ", menus=" + Arrays.toString(menuData) +
                 ", my_recommend='" + my_recommend + '\'' +
                 ", evaluate_average='" + evaluate_average + '\'' +
                 ", longitude='" + longitude + '\'' +
@@ -140,11 +140,11 @@ public class MallDetailData
         this.reviewCount = reviewCount;
     }
 
-    public String getMall_id() {
+    public Integer getMall_id() {
         return mall_id;
     }
 
-    public void setMall_id(String mall_id) {
+    public void setMall_id(Integer mall_id) {
         this.mall_id = mall_id;
     }
 
@@ -164,12 +164,12 @@ public class MallDetailData
         this.mall_name = mall_name;
     }
 
-    public Menu[] getMenus() {
-        return menus;
+    public MenuData[] getMenus() {
+        return menuData;
     }
 
-    public void setMenus(Menu[] menus) {
-        this.menus = menus;
+    public void setMenus(MenuData[] menuData) {
+        this.menuData = menuData;
     }
 
     public String getMy_recommend() {

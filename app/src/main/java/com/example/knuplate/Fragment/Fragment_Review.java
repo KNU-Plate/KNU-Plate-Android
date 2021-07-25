@@ -19,7 +19,7 @@ import com.example.knuplate.R;
 import com.example.knuplate.model.ReviewData;
 import com.example.knuplate.network.RetrofitClient;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
@@ -29,6 +29,9 @@ import retrofit2.Response;
 public class Fragment_Review extends Fragment {
 
     View v;
+    Integer mallId;
+    RecyclerView reviewRecyclerView;
+    ReviewAdapter reviewAdapter;
 
     public static Fragment_Review newInstance() {
         return new Fragment_Review();
@@ -38,11 +41,26 @@ public class Fragment_Review extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-
         v = inflater.inflate(R.layout.fragment_review, container, false);
 
+        //DetailActivity로부터 mall ID 받아오기
+        mallId = getArguments().getInt("mall_id");
+        Log.d("cb", mallId.toString());
 
-        RetrofitClient.requestGet(cbReview, "call_review");
+        //리뷰 목록 호출
+        HashMap<String,String> hashMap= new HashMap<String,String>();
+        hashMap.put("mall_id", mallId.toString()); //value를 string으로 변환해서 넘겨야 함
+        RetrofitClient.request(cbReview, "call_review", hashMap);
+
+        //리사이클러뷰 생성
+        reviewRecyclerView = v.findViewById(R.id.recyclerView);
+        reviewRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        //어댑터 붙이기
+        reviewAdapter = new ReviewAdapter();
+        reviewRecyclerView.setAdapter(reviewAdapter);
+
+
 
         return v;
     }
@@ -54,15 +72,16 @@ public class Fragment_Review extends Fragment {
         @Override
         public void onResponse(Call<List<ReviewData>> call, Response<List<ReviewData>> response) {
             if (response.isSuccessful()) {
-                List<ReviewData> reviewData = response.body();
+                List<ReviewData> reviewDataList = response.body();
 
-                RecyclerView recyclerView = v.findViewById(R.id.recyclerView);
-                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                //test
-                ArrayList<ReviewData> arrayList = new ArrayList<>(reviewData);
-                ReviewAdapter reviewAdapter = new ReviewAdapter(arrayList);
+                Log.d(TAG, cbTAG + String.valueOf(reviewDataList.size()));
 
-                recyclerView.setAdapter(reviewAdapter);
+                for(int i=0; i<reviewDataList.size(); i++){
+                    reviewAdapter.addItem(reviewDataList.get(i));
+                }
+
+                //데이터가 변화했음을 어댑터에게 알려줌
+                reviewAdapter.notifyDataSetChanged();
 
             } else {
                 Log.e(TAG, cbTAG + "레트로핏 콜백 요청 실패(1) ");

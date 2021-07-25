@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
@@ -36,6 +37,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -96,30 +98,29 @@ public class DetailActivity extends AppCompatActivity {
         ImageView ratebut_detail = findViewById(R.id.ratebut_detail);
         button = findViewById(R.id.button);
 
-        //식당 id 받아오기
+        //식당 id, 메뉴목록 받아오기
         Intent getIntent = getIntent();
-        String mallId = getIntent.getStringExtra("mall_id");
+        Integer mallId = getIntent.getIntExtra("mall_id",0);
+        List<String> mallMenus = getIntent.getStringArrayListExtra("mall_menu");
 
-        Log.d("aaa", mallId);
+        //Log.d("aaa", mallId);
 
         //상세 정보 호출
         HashMap<String, String> hashMap = new HashMap<String, String>();
-        hashMap.put("mall_id", mallId);
+        hashMap.put("mall_id", mallId.toString());
         RetrofitClient.request(cbMallDetail, "call_mall_detail", hashMap);
-
-
-        recyclerView = findViewById(R.id.recyclerView);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(layoutManager);
 
         //TabLayout-FragmentLayout
         review_fragment = new Fragment_Review();
         menu_fragment = new Fragment_Menu();
         location_fragment = new Fragment_Location();
-        getSupportFragmentManager().beginTransaction().add(R.id.frame, review_fragment).commit();
+
+        //사진 리사이클러뷰
+        recyclerView = findViewById(R.id.recyclerView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+
         TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
-
-
 
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -261,6 +262,23 @@ public class DetailActivity extends AppCompatActivity {
                 mallCategory.setText(mallDetailData.getCategory_name());
                 mallLocated.setText(mallDetailData.getGate_location());
 
+                //Log.d(cbTAG, mallDetailData.getMenus()[0].getMenu_name().toString());
+                Log.d(cbTAG, mallDetailData.getMall_id().toString());
+
+                //리뷰 프래그먼트로 넘김
+                Bundle toReviewFragBundle = new Bundle();
+                toReviewFragBundle.putInt("mall_id", mallDetailData.getMall_id());
+                review_fragment.setArguments(toReviewFragBundle);
+
+                //메뉴 프래그먼트로 넘김
+                /*
+                if (mallDetailData.getMenus().length != 0){ //메뉴 목록이 0이 아니면
+                    Bundle toMenuFragBundle = new Bundle();
+                    toMenuFragBundle.putParcelableArray("mall_menus", (Parcelable[]) mallDetailData.getMenus());
+                    menu_fragment.setArguments(toMenuFragBundle);
+                }
+*/
+                getSupportFragmentManager().beginTransaction().add(R.id.frame, review_fragment).commit();
 
             } else {
                 Log.e(TAG, cbTAG + "레트로핏 콜백 요청 실패(1) ");

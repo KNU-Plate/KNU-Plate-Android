@@ -3,30 +3,30 @@ package com.example.knuplate.model;
 import android.graphics.Bitmap;
 
 public class MallData {
-    String mall_id;
+    Integer mall_id;
     String mall_name;
     String category_name;
-    String rating;
+    Double evaluate_average;
     String address;
     String thumbnail;
 
     @Override
     public String toString() {
         return "MallData{" +
-                "mall_id='" + mall_id + '\'' +
+                "mall_id=" + mall_id +
                 ", mall_name='" + mall_name + '\'' +
                 ", category_name='" + category_name + '\'' +
-                ", rating='" + rating + '\'' +
+                ", evaluate_average=" + evaluate_average +
                 ", address='" + address + '\'' +
                 ", thumbnail='" + thumbnail + '\'' +
                 '}';
     }
 
-    public String getMall_id() {
+    public Integer getMall_id() {
         return mall_id;
     }
 
-    public void setMall_id(String mall_id) {
+    public void setMall_id(Integer mall_id) {
         this.mall_id = mall_id;
     }
 
@@ -46,12 +46,12 @@ public class MallData {
         this.category_name = category_name;
     }
 
-    public String getRating() {
-        return rating;
+    public Double getEvaluate_average() {
+        return evaluate_average;
     }
 
-    public void setRating(String rating) {
-        this.rating = rating;
+    public void setEvaluate_average(Double evaluate_average) {
+        this.evaluate_average = evaluate_average;
     }
 
     public String getAddress() {

@@ -12,16 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.knuplate.R;
+import com.example.knuplate.model.MallData;
 import com.example.knuplate.model.ReviewData;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>{
-    private ArrayList<ReviewData> arrayList;
-
-    public ReviewAdapter(ArrayList<ReviewData> arrayList) {
-        this.arrayList = arrayList;
-    }
+    private ArrayList<ReviewData> reviewDataList = new ArrayList<>();
 
     @NonNull
     @Override
@@ -35,19 +33,22 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
     @Override
     public void onBindViewHolder(@NonNull ReviewViewHolder holder, int position) {
         //holder.detail_picture.setImageResource(arrayList.get(position).getReview_id());
-        holder.detail_nick.setText(arrayList.get(position).getUser_id());
-        //holder.detail_profile.setImageResource(arrayList.get(position).getDetail_profile());
-        holder.detail_rate.setRating(arrayList.get(position).getEvaluate());
-        holder.detail_review.setText(arrayList.get(position).getContents());
-    }
 
+        holder.detail_nick.setText(reviewDataList.get(position).getUser_id());
+
+        //holder.detail_profile.setImageResource(arrayList.get(position).getDetail_profile());
+        holder.detail_rate.setRating(reviewDataList.get(position).getEvaluate());
+        holder.detail_review.setText(reviewDataList.get(position).getContents());
+    }
 
     @Override
-    public int getItemCount(){
-    // 삼항 연산자
-        return (arrayList != null ? arrayList.size() : 0);
+    public int getItemCount() {
+        return reviewDataList.size();
     }
 
+    public void addItem(ReviewData reviewData){
+        reviewDataList.add(reviewData);
+    }
 
     public class ReviewViewHolder extends RecyclerView.ViewHolder {
         ImageView detail_picture;

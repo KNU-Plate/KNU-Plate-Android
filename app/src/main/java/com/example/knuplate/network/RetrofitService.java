@@ -30,13 +30,19 @@ public interface RetrofitService {
     @GET("api/notice")
     Call<List<NoticeData>> getNoticeData(@Query("number") int cursor);
 
+<<<<<<< HEAD
+=======
     @GET("api/review")
     Call<List<ReviewData>> getReviewData(@Query("mall_id") int mall_id, @Query("myReview") String myReview);
 
+>>>>>>> ba5ddfcdb1fca974621ab6c9f33bbf6a313c4ca1
     @GET("api/mall")
     Call<List<MallData>> getMallData(@QueryMap HashMap<String, String> param);
 
     @GET("api/mall/{mall_id}")
     Call<MallDetailData> getMallDetailData(@Path("mall_id") Integer mall_id);
+
+    @GET("api/review")
+    Call<List<ReviewData>> getReviewData(@Query("mall_id") int mall_id, @Query("myReview") String myReview);
 
 }

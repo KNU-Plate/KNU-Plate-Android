@@ -1,31 +1,34 @@
 package com.example.knuplate.model;
 
 public class ReviewData {
-    private int review_id;
+    private Integer review_id;
     private String user_id;
-    private int mail_id;
+    private Integer mail_id;
     private String date_create;
     private String contents;
-    private int evaluate;
+    private Integer evaluate;
     private String review_image;
     private String is_active;
 
-    public ReviewData(int review_id, String user_id, int mail_id, String date_create, String contents, int evaluate, String review_image, String is_active) {
-        this.review_id = review_id;
-        this.user_id = user_id;
-        this.mail_id = mail_id;
-        this.date_create = date_create;
-        this.contents = contents;
-        this.evaluate = evaluate;
-        this.review_image = review_image;
-        this.is_active = is_active;
+    @Override
+    public String toString() {
+        return "ReviewData{" +
+                "review_id=" + review_id +
+                ", user_id='" + user_id + '\'' +
+                ", mail_id=" + mail_id +
+                ", date_create='" + date_create + '\'' +
+                ", contents='" + contents + '\'' +
+                ", evaluate=" + evaluate +
+                ", review_image='" + review_image + '\'' +
+                ", is_active='" + is_active + '\'' +
+                '}';
     }
 
-    public int getReview_id() {
+    public Integer getReview_id() {
         return review_id;
     }
 
-    public void setReview_id(int review_id) {
+    public void setReview_id(Integer review_id) {
         this.review_id = review_id;
     }
 
@@ -37,11 +40,11 @@ public class ReviewData {
         this.user_id = user_id;
     }
 
-    public int getMail_id() {
+    public Integer getMail_id() {
         return mail_id;
     }
 
-    public void setMail_id(int mail_id) {
+    public void setMail_id(Integer mail_id) {
         this.mail_id = mail_id;
     }
 
@@ -61,11 +64,11 @@ public class ReviewData {
         this.contents = contents;
     }
 
-    public int getEvaluate() {
+    public Integer getEvaluate() {
         return evaluate;
     }
 
-    public void setEvaluate(int evaluate) {
+    public void setEvaluate(Integer evaluate) {
         this.evaluate = evaluate;
     }
 

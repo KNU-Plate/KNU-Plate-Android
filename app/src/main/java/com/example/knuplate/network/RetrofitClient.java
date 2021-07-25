@@ -64,10 +64,14 @@ public class RetrofitClient {
             call.enqueue(callback);
         }
 
-
+        if("call_review".equals(gubun)){
+            String mallId = hashMap.get("mall_id");
+            Integer mallId_Int = Integer.parseInt(mallId);
+            Call<List<ReviewData>> call = service.getReviewData(mallId_Int, "N");
+            call.enqueue(callback);
+        }
 
     }
-
 
 
 
@@ -98,10 +102,6 @@ public class RetrofitClient {
             call.enqueue(callback);
         }
 
-        if("call_review".equals(gubun)) {
-            Call<List<ReviewData>> call = service.getReviewData(36, "N");
-            call.enqueue(callback);
-        }
     }
 
 }

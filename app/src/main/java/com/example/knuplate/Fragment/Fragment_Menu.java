@@ -12,12 +12,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.knuplate.Adapter.MenuAdapter;
+import com.example.knuplate.Adapter.ReviewAdapter;
 import com.example.knuplate.R;
-import com.example.knuplate.model.MenuData;
+import com.example.knuplate.model.dto.MenuData;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Fragment_Menu extends Fragment {
+
+    ArrayList<MenuData> menuDataList;
+    RecyclerView menuRecyclerView;
+    MenuAdapter menuAdapter;
 
     public static Fragment_Menu newInstance() {
         return new Fragment_Menu();
@@ -29,9 +35,13 @@ public class Fragment_Menu extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_menu, container, false);
 
-        RecyclerView recyclerView = v.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        menuDataList = getArguments().getParcelableArrayList("mall_menu");
+
+        menuRecyclerView = v.findViewById(R.id.recyclerView);
+        menuRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         //test
+<<<<<<< HEAD
+=======
         ArrayList<MenuData> arrayList = new ArrayList<>();
         MenuAdapter menuAdapter = new MenuAdapter(arrayList);
         recyclerView.setAdapter(menuAdapter);
@@ -46,7 +56,18 @@ public class Fragment_Menu extends Fragment {
         arrayList.add(testdata1);
         arrayList.add(testdata2);
         arrayList.add(testdata3);
+>>>>>>> ba5ddfcdb1fca974621ab6c9f33bbf6a313c4ca1
 
+        menuAdapter = new MenuAdapter();
+        menuRecyclerView.setAdapter(menuAdapter);
+
+        //메뉴 목록 추가
+        for (int i=0; i<menuDataList.size(); i++){
+            menuAdapter.addItem(menuDataList.get(i));
+        }
+
+        //데이터 변화했음을 알림
+        menuAdapter.notifyDataSetChanged();
 
         return v;
 

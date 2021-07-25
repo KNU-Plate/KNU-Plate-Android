@@ -46,12 +46,13 @@ public class RestListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        //액티비티로부터 번들을 통해 카테고리 이름 받아오기
         category_name = getArguments().getString("category_name");
 
         View view = inflater.inflate(R.layout.fragment_rest_list, null);
 
+        //식당 목록 호출
         HashMap<String, String> mallMap = new HashMap<>();
-
         mallMap.put("category_name", category_name);
         RetrofitClient.request(cbMallList, "call_mall_list", mallMap);
 
@@ -60,8 +61,8 @@ public class RestListFragment extends Fragment {
         gridLayoutManager = new GridLayoutManager(getActivity(),2);
         recyclerView.setLayoutManager(gridLayoutManager);
 
+        //어댑터 세팅
         adapter = new RestAdapter();
-
         recyclerView.setAdapter(adapter);
 
         // Inflate the layout for this fragment
@@ -89,6 +90,7 @@ public class RestListFragment extends Fragment {
                         Toast.makeText(getContext(), mallDataList.get(pos).getMall_name(),Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getActivity(), DetailActivity.class);
 
+                        //인텐트로 mall id 넘기기
                         intent.putExtra("mall_id", mallDataList.get(pos).getMall_id());
                         startActivity(intent);
                     }
