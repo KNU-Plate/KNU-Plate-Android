@@ -5,7 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
+<<<<<<< Updated upstream
     <LinearLayout
+=======
+    <FrameLayout
+        android:id="@+id/main"
+        android:layout_above="@id/bottom_menu"
+>>>>>>> Stashed changes
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -20,7 +26,28 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+<<<<<<< Updated upstream
                 android:text="한식" />
+=======
+                app:tabMode="scrollable"
+                app:tabIndicatorColor="@color/title_color"
+                app:tabSelectedTextColor="@color/title_color">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="한식" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="중식" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일식" />
+>>>>>>> Stashed changes
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -52,7 +79,19 @@
                 android:layout_height="wrap_content"
                 android:text="일식" />
 
+<<<<<<< Updated upstream
         </com.google.android.material.tabs.TabLayout>
+=======
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/RestListFabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:src="@drawable/add_floatbutton"
+            android:backgroundTint="@color/title_color"/>
+>>>>>>> Stashed changes
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/RestListViewPager"
@@ -66,8 +105,21 @@
         android:id="@+id/RestListFabBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< Updated upstream
         android:layout_gravity="bottom|end"
         android:clickable="true"
         android:src="@drawable/ic_add_circle"
         android:layout_margin="16dp"/>
 </FrameLayout>
+=======
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        app:itemIconTint="@color/title_color"
+        app:itemTextColor="@color/title_color"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottombar_menu"/>
+</RelativeLayout>
+
+
+
+>>>>>>> Stashed changes

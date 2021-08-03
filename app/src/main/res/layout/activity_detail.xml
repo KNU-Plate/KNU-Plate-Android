@@ -9,7 +9,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+<<<<<<< Updated upstream
         android:orientation="vertical" >
+=======
+        android:layout_above="@id/bottom_menu"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical">
+>>>>>>> Stashed changes
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -27,6 +33,7 @@
                 android:textColor="@color/black"
                 />
 
+<<<<<<< Updated upstream
         </androidx.appcompat.widget.Toolbar>
         <ImageView
             android:layout_width="match_parent"
@@ -35,16 +42,36 @@
             android:layout_marginBottom="5dp"/>
 
 
+=======
+            </androidx.appcompat.widget.Toolbar>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/line_divider" />
+
+            <TextView
+                android:id="@+id/mallTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/seoulnamsancb"
+                android:gravity="center"
+                android:text="반미리코"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+>>>>>>> Stashed changes
 
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:text="사진선택"
-            android:background="@drawable/title_button_design" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/title_button_design"
+                android:gravity="center"
+                android:text="사진선택" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -73,7 +100,15 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+<<<<<<< Updated upstream
                 android:layout_weight="1"/>
+=======
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/title_button_design"
+                android:gravity="center"
+                android:text="사진선택" />
+>>>>>>> Stashed changes
 
             <ImageView
                 android:id="@+id/likebut_detail"
@@ -221,6 +256,7 @@
 
         </com.google.android.material.tabs.TabLayout>
 
+<<<<<<< Updated upstream
         <FrameLayout
             android:id="@+id/frame"
             android:layout_width="match_parent"
@@ -229,12 +265,29 @@
 
 
         </FrameLayout>
+=======
+        </LinearLayout>
+>>>>>>> Stashed changes
 
 
 
+<<<<<<< Updated upstream
 
     </LinearLayout>
 
 
 
 </ScrollView>
+=======
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        app:itemIconTint="@color/title_color"
+        app:itemTextColor="@color/title_color"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottombar_menu"/>
+</RelativeLayout>
+>>>>>>> Stashed changes

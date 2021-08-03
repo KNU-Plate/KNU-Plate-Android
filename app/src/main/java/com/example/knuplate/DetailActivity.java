@@ -27,6 +27,13 @@ import com.example.knuplate.Adapter.UriImageAdapter;
 import com.example.knuplate.Fragment.Fragment_Location;
 import com.example.knuplate.Fragment.Fragment_Menu;
 import com.example.knuplate.Fragment.Fragment_Review;
+<<<<<<< Updated upstream
+=======
+import com.example.knuplate.model.MallDetailData;
+import com.example.knuplate.network.RetrofitClient;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+>>>>>>> Stashed changes
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -52,6 +59,15 @@ public class DetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+<<<<<<< Updated upstream
+=======
+
+
+        //식당 id, 메뉴목록 받아오기
+        Intent getIntent = getIntent();
+        Integer mallId = getIntent.getIntExtra("mall_id",0);
+        List<String> mallMenus = getIntent.getStringArrayListExtra("mall_menu");
+>>>>>>> Stashed changes
 
         ImageView likebut_detail = findViewById(R.id.likebut_detail);
         ImageView ratebut_detail = findViewById(R.id.ratebut_detail);

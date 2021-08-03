@@ -255,5 +255,30 @@
             </LinearLayout>
 
         </LinearLayout>
+<<<<<<< Updated upstream
     </LinearLayout>
 </ScrollView>
+=======
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main"></FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        app:itemIconTint="@color/title_color"
+        app:itemTextColor="@color/title_color"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottombar_menu" />
+</RelativeLayout>
+
+
+>>>>>>> Stashed changes
