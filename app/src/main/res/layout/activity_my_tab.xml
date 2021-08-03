@@ -384,7 +384,7 @@
         android:background="#FFFFFF"
         app:itemIconTint="@color/title_color"
         app:itemTextColor="@color/title_color"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/bottombar_menu" />
 </RelativeLayout>
 

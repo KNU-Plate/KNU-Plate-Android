@@ -7,6 +7,7 @@
 
     <ScrollView
         android:id="@+id/main"
+        android:layout_above="@+id/bottom_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -258,6 +259,6 @@
         android:background="#FFFFFF"
         app:itemIconTint="@color/title_color"
         app:itemTextColor="@color/title_color"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/bottombar_menu"/>
 </RelativeLayout>
