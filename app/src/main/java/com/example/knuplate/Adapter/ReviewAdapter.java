@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.knuplate.R;
 import com.example.knuplate.model.MallData;
 import com.example.knuplate.model.ReviewData;
@@ -33,6 +34,10 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
     @Override
     public void onBindViewHolder(@NonNull ReviewViewHolder holder, int position) {
         //holder.detail_picture.setImageResource(arrayList.get(position).getReview_id());
+
+        Glide.with(holder.itemView.getContext())
+                .load(R.drawable.testpicture)
+                .into(holder.detail_picture);
 
         holder.detail_nick.setText(reviewDataList.get(position).getUser_id());
 

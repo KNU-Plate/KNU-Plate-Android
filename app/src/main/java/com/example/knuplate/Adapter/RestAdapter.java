@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.knuplate.R;
 import com.example.knuplate.model.MallData;
 
@@ -83,11 +84,14 @@ public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestItemViewHo
 
         void onBind(MallData data){
 
+            Glide.with(itemView)
+                    .load(R.drawable.testimg_gutdone)
+                    .into(imageView);
             //imageView.setImageBitmap(data.getThumbnail());
             tv_name.setText(data.getMall_name());
 
             if (data.getEvaluate_average() != null){
-                tv_rating.setText(data.getEvaluate_average().toString());
+                tv_rating.setText(String.format("%.1f",data.getEvaluate_average()));
             }
 
         }
