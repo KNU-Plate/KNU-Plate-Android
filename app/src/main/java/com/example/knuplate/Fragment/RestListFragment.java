@@ -57,7 +57,6 @@ public class RestListFragment extends Fragment {
         RetrofitClient.request(cbMallList, "call_mall_list", mallMap);
 
         recyclerView = view.findViewById(R.id.restList);
-
         gridLayoutManager = new GridLayoutManager(getActivity(),2);
         recyclerView.setLayoutManager(gridLayoutManager);
 

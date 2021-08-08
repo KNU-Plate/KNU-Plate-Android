@@ -9,6 +9,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_menu"
         android:orientation="vertical">
 
         <LinearLayout
@@ -21,39 +22,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-        </androidx.appcompat.widget.Toolbar>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/line_divider"
-            android:layout_marginBottom="5dp"/>
-            <TextView
-                android:id="@+id/mallTitle"
+
+                <TextView
+                    android:id="@+id/mallTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/seoulnamsancb"
+                    android:gravity="center"
+                    android:text="반미리코"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.Toolbar>
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/seoulnamsancb"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/line_divider" />
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/title_button_design"
                 android:gravity="center"
-                android:text="반미리코"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:text="사진선택"
-            android:background="@drawable/title_button_design" />
+                android:text="사진선택" />
 
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="1"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:background="@drawable/title_button_design"
                 android:gravity="center"
                 android:text="사진선택" />
@@ -238,17 +241,15 @@
                 android:layout_height="wrap_content"></FrameLayout>
 
 
-
-
         </LinearLayout>
 
     </ScrollView>
 
     <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/main"
-        android:id="@+id/container"></FrameLayout>
+        android:layout_below="@id/main"></FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_menu"
@@ -258,6 +259,6 @@
         android:background="#FFFFFF"
         app:itemIconTint="@color/title_color"
         app:itemTextColor="@color/title_color"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottombar_menu"/>
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottombar_menu" />
 </RelativeLayout>
