@@ -74,7 +74,7 @@ public class DetailActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.tab1:
-                        Intent intent1 = new Intent(getApplicationContext(), RestListActivity.class);
+                        Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent1);
                         return true;
                     case R.id.tab2:

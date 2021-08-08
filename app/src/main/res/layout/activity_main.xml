@@ -87,7 +87,7 @@
                                 android:layout_height="60dp"
                                 android:layout_marginVertical="5dp"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/add_floatbutton" />
+                                android:src="@drawable/korean_food" />
 
                             <TextView
                                 android:layout_width="60dp"
@@ -96,6 +96,7 @@
                                 android:gravity="center"
                                 android:text="한식"
                                 android:textColorHint="#353535"
+                                android:textStyle="bold"
                                 android:textSize="15dp" />
                         </LinearLayout>
 
@@ -110,7 +111,8 @@
                                 android:layout_height="60dp"
                                 android:layout_marginVertical="5dp"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/add_floatbutton" />
+                                android:padding="5dp"
+                                android:src="@drawable/chinese_food" />
 
                             <TextView
                                 android:layout_width="60dp"
@@ -118,6 +120,7 @@
                                 android:fontFamily="@font/seoulnamsancb"
                                 android:gravity="center"
                                 android:text="중식"
+                                android:textStyle="bold"
                                 android:textColorHint="#353535"
                                 android:textSize="15dp" />
                         </LinearLayout>
@@ -133,7 +136,8 @@
                                 android:layout_height="60dp"
                                 android:layout_marginVertical="5dp"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/add_floatbutton" />
+                                android:padding="3dp"
+                                android:src="@drawable/japanese_food" />
 
                             <TextView
                                 android:layout_width="60dp"
@@ -141,6 +145,7 @@
                                 android:fontFamily="@font/seoulnamsancb"
                                 android:gravity="center"
                                 android:text="일식"
+                                android:textStyle="bold"
                                 android:textColorHint="#353535"
                                 android:textSize="15dp" />
                         </LinearLayout>
@@ -156,7 +161,8 @@
                                 android:layout_height="60dp"
                                 android:layout_marginVertical="5dp"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/add_floatbutton" />
+                                android:padding="2dp"
+                                android:src="@drawable/world_food" />
 
                             <TextView
                                 android:layout_width="60dp"
@@ -164,6 +170,7 @@
                                 android:fontFamily="@font/seoulnamsancb"
                                 android:gravity="center"
                                 android:text="세계음식"
+                                android:textStyle="bold"
                                 android:textColorHint="#353535"
                                 android:textSize="14dp" />
                         </LinearLayout>
@@ -179,7 +186,8 @@
                                 android:layout_height="60dp"
                                 android:layout_marginVertical="5dp"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/add_floatbutton" />
+                                android:padding="5dp"
+                                android:src="@drawable/coffee_food" />
 
                             <TextView
                                 android:layout_width="60dp"
@@ -187,6 +195,7 @@
                                 android:fontFamily="@font/seoulnamsancb"
                                 android:gravity="center"
                                 android:text="카페"
+                                android:textStyle="bold"
                                 android:textColorHint="#353535"
                                 android:textSize="15dp" />
                         </LinearLayout>
@@ -225,13 +234,30 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="15dp"
                             android:orientation="vertical">
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp">
 
-                            <ImageView
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_marginVertical="5dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/add_floatbutton" />
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/maincolor_button" />
+
+                                <TextView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:fontFamily="@font/seoulnamsancb"
+                                    android:gravity="center"
+                                    android:text="북"
+                                    android:layout_marginRight="1dp"
+                                    android:layout_marginTop="1.2dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="35dp" />
+                            </FrameLayout>
 
                             <TextView
                                 android:layout_width="70dp"
@@ -239,8 +265,11 @@
                                 android:fontFamily="@font/seoulnamsancb"
                                 android:gravity="center"
                                 android:text="북문"
+                                android:textStyle="bold"
                                 android:textColorHint="#353535"
                                 android:textSize="15dp" />
+
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -248,20 +277,37 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="15dp"
                             android:orientation="vertical">
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp">
 
-                            <ImageView
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_marginVertical="5dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/add_floatbutton" />
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/maincolor_button" />
 
+                                <TextView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:fontFamily="@font/seoulnamsancb"
+                                    android:gravity="center"
+                                    android:text="동"
+                                    android:layout_marginRight="1dp"
+                                    android:layout_marginTop="1.2dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="35dp"  />
+                            </FrameLayout>
                             <TextView
                                 android:layout_width="70dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/seoulnamsancb"
                                 android:gravity="center"
                                 android:text="동문"
+                                android:textStyle="bold"
                                 android:textColorHint="#353535"
                                 android:textSize="15dp" />
                         </LinearLayout>
@@ -272,12 +318,30 @@
                             android:layout_marginRight="15dp"
                             android:orientation="vertical">
 
-                            <ImageView
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_marginVertical="5dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/add_floatbutton" />
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp">
+
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/maincolor_button" />
+
+                                <TextView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:fontFamily="@font/seoulnamsancb"
+                                    android:gravity="center"
+                                    android:text="쪽"
+                                    android:layout_marginRight="1dp"
+                                    android:layout_marginTop="1.2dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="35dp" />
+                            </FrameLayout>
 
                             <TextView
                                 android:layout_width="70dp"
@@ -285,6 +349,7 @@
                                 android:fontFamily="@font/seoulnamsancb"
                                 android:gravity="center"
                                 android:text="쪽문"
+                                android:textStyle="bold"
                                 android:textColorHint="#353535"
                                 android:textSize="14dp" />
                         </LinearLayout>
@@ -295,12 +360,30 @@
                             android:layout_marginRight="15dp"
                             android:orientation="vertical">
 
-                            <ImageView
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_marginVertical="5dp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/add_floatbutton" />
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp">
+
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/maincolor_button" />
+
+                                <TextView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:fontFamily="@font/seoulnamsancb"
+                                    android:gravity="center"
+                                    android:text="서"
+                                    android:layout_marginRight="1dp"
+                                    android:layout_marginTop="1.2dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="35dp" />
+                            </FrameLayout>
 
                             <TextView
                                 android:layout_width="70dp"
@@ -308,6 +391,7 @@
                                 android:fontFamily="@font/seoulnamsancb"
                                 android:gravity="center"
                                 android:text="서문"
+                                android:textStyle="bold"
                                 android:textColorHint="#353535"
                                 android:textSize="15dp" />
                         </LinearLayout>
