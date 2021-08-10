@@ -1,6 +1,8 @@
 package com.example.knuplate.Adapter;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.knuplate.DetailActivity;
+import com.example.knuplate.DetailZoomActivity;
 import com.example.knuplate.R;
 import com.example.knuplate.model.MallData;
 import com.example.knuplate.model.ReviewData;
@@ -21,12 +25,14 @@ import java.util.List;
 
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>{
     private ArrayList<ReviewData> reviewDataList = new ArrayList<>();
+    private Context context;
 
     @NonNull
     @Override
     public ReviewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_detail, parent, false);
         ReviewViewHolder holder = new ReviewViewHolder(view);
+        context = parent.getContext();
         return holder;
 
     }
@@ -64,6 +70,21 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
         public ReviewViewHolder(@NonNull final View itemView) {
             super(itemView);
+
+            // 아이템 클릭 이벤트 처리.
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // TODO : process click event.
+                    int pos = getAdapterPosition() ;
+                    if (pos != RecyclerView.NO_POSITION) {
+                        //RecyclerItem item = reviewDataList.get(pos) ;
+                        Intent intent = new Intent(context, DetailZoomActivity.class);
+                        context.startActivity(intent);
+
+                    }
+                }
+            });
 
             this.detail_picture = itemView.findViewById(R.id.detail_picture);
             this.detail_rate = itemView.findViewById(R.id.detail_rate);

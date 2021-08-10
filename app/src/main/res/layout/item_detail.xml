@@ -74,7 +74,8 @@
                 android:text="Default Review 입니다."
                 android:textSize="18dp"
                 android:fontFamily="@font/seoulnamsancb"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:maxLines="3"/>
 
         </LinearLayout>
 
