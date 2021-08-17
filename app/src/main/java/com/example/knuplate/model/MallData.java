@@ -3,7 +3,7 @@ package com.example.knuplate.model;
 import android.graphics.Bitmap;
 
 public class MallData {
-    Integer mall_id;
+    int mall_id;
     String mall_name;
     String category_name;
     Double evaluate_average;

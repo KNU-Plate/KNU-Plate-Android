@@ -14,7 +14,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
@@ -31,6 +30,7 @@ import com.example.knuplate.Fragment.Fragment_Location;
 import com.example.knuplate.Fragment.Fragment_Menu;
 import com.example.knuplate.Fragment.Fragment_Review;
 import com.example.knuplate.model.MallDetailData;
+import com.example.knuplate.model.dto.MenuData;
 import com.example.knuplate.network.RetrofitClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -262,7 +262,6 @@ public class DetailActivity extends AppCompatActivity {
                 mallCategory.setText(mallDetailData.getCategory_name());
                 mallLocated.setText(mallDetailData.getGate_location());
 
-                //Log.d(cbTAG, mallDetailData.getMenus()[0].getMenu_name().toString());
                 Log.d(cbTAG, mallDetailData.getMall_id().toString());
 
                 //리뷰 프래그먼트로 넘김
@@ -270,19 +269,25 @@ public class DetailActivity extends AppCompatActivity {
                 toReviewFragBundle.putInt("mall_id", mallDetailData.getMall_id());
                 review_fragment.setArguments(toReviewFragBundle);
 
-                //메뉴 프래그먼트로 넘김
-                /*
-                if (mallDetailData.getMenus().length != 0){ //메뉴 목록이 0이 아니면
-                    Bundle toMenuFragBundle = new Bundle();
-                    toMenuFragBundle.putParcelableArray("mall_menus", (Parcelable[]) mallDetailData.getMenus());
-                    menu_fragment.setArguments(toMenuFragBundle);
+                ArrayList<MenuData> menus = new ArrayList<MenuData>();
+
+                //메뉴 목록이 0이 아니면 getMenus()로 메뉴 목록을 가져온다
+                if (mallDetailData.getMenus() != null) {
+                    menus = mallDetailData.getMenus();
+                    Log.d("Retrofit", String.valueOf(menus));
                 }
-*/
+
+                //메뉴 프래그먼트로 넘김
+                Bundle toMenuFragBundle = new Bundle();
+                toMenuFragBundle.putParcelableArrayList("mall_menus", menus);
+                menu_fragment.setArguments(toMenuFragBundle);
+
+
                 getSupportFragmentManager().beginTransaction().add(R.id.frame, review_fragment).commit();
 
             } else {
                 Log.e(TAG, cbTAG + "레트로핏 콜백 요청 실패(1) ");
-                Toast.makeText(getApplicationContext(), "식당 상세 정보불러오기 실패", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "식당 상세 정보 불러오기 실패", Toast.LENGTH_SHORT).show();
             }
         }
 

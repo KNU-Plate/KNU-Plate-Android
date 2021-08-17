@@ -38,13 +38,10 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         Integer ratioOfLike = cntOfLike / (cntOfDislike+cntOfLike) *100 ;
 
         holder.menu_item_pb.setProgress(ratioOfLike);
-
     }
-
 
     @Override
     public int getItemCount(){
-    // 삼항 연산자
         return menuDataList.size();
     }
 

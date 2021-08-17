@@ -3,29 +3,28 @@ package com.example.knuplate.model;
 import com.example.knuplate.model.dto.FileFolder;
 import com.example.knuplate.model.dto.MenuData;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
-public class MallDetailData
-{
-    private String kakao_mall_id;
-    private String thumbnail;
-    private String category_name;
-    private String address;
-    private String is_active;
-    private String latitude;
-    private String recommend_count;
-    private FileFolder file_folder;
-    private String user_id;
-    private String date_create;
-    private String reviewCount;
-    private Integer mall_id;
-    private String contact;
-    private String mall_name;
-    private MenuData[] menuData;
-    private String my_recommend;
-    private String evaluate_average;
-    private String longitude;
-    private String gate_location;
+public class MallDetailData {
+    String kakao_mall_id;
+    String thumbnail;
+    String category_name;
+    String address;
+    String is_active;
+    String latitude;
+    String recommend_count;
+    FileFolder file_folder;
+    String user_id;
+    String date_create;
+    String reviewCount;
+    Integer mall_id;
+    String contact;
+    String mall_name;
+    ArrayList<MenuData> menus;
+    String my_recommend;
+    String evaluate_average;
+    String longitude;
+    String gate_location;
 
     @Override
     public String toString() {
@@ -41,10 +40,10 @@ public class MallDetailData
                 ", user_id='" + user_id + '\'' +
                 ", date_create='" + date_create + '\'' +
                 ", reviewCount='" + reviewCount + '\'' +
-                ", mall_id='" + mall_id + '\'' +
+                ", mall_id=" + mall_id +
                 ", contact='" + contact + '\'' +
                 ", mall_name='" + mall_name + '\'' +
-                ", menus=" + Arrays.toString(menuData) +
+                ", menus=" + menus +
                 ", my_recommend='" + my_recommend + '\'' +
                 ", evaluate_average='" + evaluate_average + '\'' +
                 ", longitude='" + longitude + '\'' +
@@ -164,12 +163,12 @@ public class MallDetailData
         this.mall_name = mall_name;
     }
 
-    public MenuData[] getMenus() {
-        return menuData;
+    public ArrayList<MenuData> getMenus() {
+        return menus;
     }
 
-    public void setMenus(MenuData[] menuData) {
-        this.menuData = menuData;
+    public void setMenus(ArrayList<MenuData> menus) {
+        this.menus = menus;
     }
 
     public String getMy_recommend() {
@@ -203,4 +202,5 @@ public class MallDetailData
     public void setGate_location(String gate_location) {
         this.gate_location = gate_location;
     }
+
 }

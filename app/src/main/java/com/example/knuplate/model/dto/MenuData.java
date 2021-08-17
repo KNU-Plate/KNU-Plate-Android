@@ -4,66 +4,31 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class MenuData implements Parcelable {
-    private Integer like;
+    private int like;
     private String date_create;
-    private Integer dislike;
-    private Integer mall_id;
+    private int dislike;
+    private int mall_id;
     private String menu_name;
-    private Integer menu_id;
+    private int menu_id;
+
 
     protected MenuData(Parcel in) {
-        if (in.readByte() == 0) {
-            like = null;
-        } else {
-            like = in.readInt();
-        }
+        like = in.readInt();
         date_create = in.readString();
-        if (in.readByte() == 0) {
-            dislike = null;
-        } else {
-            dislike = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            mall_id = null;
-        } else {
-            mall_id = in.readInt();
-        }
+        dislike = in.readInt();
+        mall_id = in.readInt();
         menu_name = in.readString();
-        if (in.readByte() == 0) {
-            menu_id = null;
-        } else {
-            menu_id = in.readInt();
-        }
+        menu_id = in.readInt();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        if (like == null) {
-            dest.writeByte((byte) 0);
-        } else {
-            dest.writeByte((byte) 1);
-            dest.writeInt(like);
-        }
+        dest.writeInt(like);
         dest.writeString(date_create);
-        if (dislike == null) {
-            dest.writeByte((byte) 0);
-        } else {
-            dest.writeByte((byte) 1);
-            dest.writeInt(dislike);
-        }
-        if (mall_id == null) {
-            dest.writeByte((byte) 0);
-        } else {
-            dest.writeByte((byte) 1);
-            dest.writeInt(mall_id);
-        }
+        dest.writeInt(dislike);
+        dest.writeInt(mall_id);
         dest.writeString(menu_name);
-        if (menu_id == null) {
-            dest.writeByte((byte) 0);
-        } else {
-            dest.writeByte((byte) 1);
-            dest.writeInt(menu_id);
-        }
+        dest.writeInt(menu_id);
     }
 
     @Override
@@ -95,11 +60,11 @@ public class MenuData implements Parcelable {
                 '}';
     }
 
-    public Integer getLike() {
+    public int getLike() {
         return like;
     }
 
-    public void setLike(Integer like) {
+    public void setLike(int like) {
         this.like = like;
     }
 
@@ -111,19 +76,19 @@ public class MenuData implements Parcelable {
         this.date_create = date_create;
     }
 
-    public Integer getDislike() {
+    public int getDislike() {
         return dislike;
     }
 
-    public void setDislike(Integer dislike) {
+    public void setDislike(int dislike) {
         this.dislike = dislike;
     }
 
-    public Integer getMall_id() {
+    public int getMall_id() {
         return mall_id;
     }
 
-    public void setMall_id(Integer mall_id) {
+    public void setMall_id(int mall_id) {
         this.mall_id = mall_id;
     }
 
@@ -135,11 +100,11 @@ public class MenuData implements Parcelable {
         this.menu_name = menu_name;
     }
 
-    public Integer getMenu_id() {
+    public int getMenu_id() {
         return menu_id;
     }
 
-    public void setMenu_id(Integer menu_id) {
+    public void setMenu_id(int menu_id) {
         this.menu_id = menu_id;
     }
 }
