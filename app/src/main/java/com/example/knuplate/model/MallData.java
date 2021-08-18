@@ -2,6 +2,8 @@ package com.example.knuplate.model;
 
 import android.graphics.Bitmap;
 
+import com.example.knuplate.model.dto.FileFolder;
+
 public class MallData {
     int mall_id;
     String mall_name;
@@ -9,6 +11,7 @@ public class MallData {
     Double evaluate_average;
     String address;
     String thumbnail;
+    FileFolder file_folder;
 
     @Override
     public String toString() {
@@ -19,14 +22,15 @@ public class MallData {
                 ", evaluate_average=" + evaluate_average +
                 ", address='" + address + '\'' +
                 ", thumbnail='" + thumbnail + '\'' +
+                ", file_folder=" + file_folder +
                 '}';
     }
 
-    public Integer getMall_id() {
+    public int getMall_id() {
         return mall_id;
     }
 
-    public void setMall_id(Integer mall_id) {
+    public void setMall_id(int mall_id) {
         this.mall_id = mall_id;
     }
 
@@ -68,5 +72,13 @@ public class MallData {
 
     public void setThumbnail(String thumbnail) {
         this.thumbnail = thumbnail;
+    }
+
+    public FileFolder getFile_folder() {
+        return file_folder;
+    }
+
+    public void setFile_folder(FileFolder file_folder) {
+        this.file_folder = file_folder;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.knuplate.Adapter;
 
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.knuplate.R;
 import com.example.knuplate.model.MallData;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestItemViewHolder> {
@@ -83,7 +85,13 @@ public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestItemViewHo
 
         void onBind(MallData data){
 
-            //imageView.setImageBitmap(data.getThumbnail());
+            //파일 폴더가 null이 아니고 사진이 1개 이상이면
+            if (data.getFile_folder() != null && data.getFile_folder().getFiles().size() > 0){
+                //사진을 넣도록 한다
+
+                //(참고) 첫 번째 인덱스의 사진 경로
+                // data.getFile_folder().getFiles().get(0).getPath()
+            }
             tv_name.setText(data.getMall_name());
 
             if (data.getEvaluate_average() != null){

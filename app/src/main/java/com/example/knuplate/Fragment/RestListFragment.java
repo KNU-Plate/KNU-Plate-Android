@@ -82,17 +82,13 @@ public class RestListFragment extends Fragment {
                     adapter.addItem(mallDataList.get(i));
                 }
 
-                adapter.setOnItemClickListener(new RestAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View v, int pos) {
+                adapter.setOnItemClickListener((v, pos) -> {
+                    Toast.makeText(getContext(), mallDataList.get(pos).getMall_name(),Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), DetailActivity.class);
 
-                        Toast.makeText(getContext(), mallDataList.get(pos).getMall_name(),Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getActivity(), DetailActivity.class);
-
-                        //인텐트로 mall id 넘기기
-                        intent.putExtra("mall_id", mallDataList.get(pos).getMall_id());
-                        startActivity(intent);
-                    }
+                    //인텐트로 mall id 넘기기
+                    intent.putExtra("mall_id", mallDataList.get(pos).getMall_id());
+                    startActivity(intent);
                 });
 
                 adapter.notifyDataSetChanged(); //아이템이 변화함을 알림

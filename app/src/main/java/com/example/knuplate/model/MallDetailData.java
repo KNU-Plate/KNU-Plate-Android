@@ -11,7 +11,8 @@ public class MallDetailData {
     String category_name;
     String address;
     String is_active;
-    String latitude;
+    double latitude;
+    double longitude;
     String recommend_count;
     FileFolder file_folder;
     String user_id;
@@ -23,7 +24,7 @@ public class MallDetailData {
     ArrayList<MenuData> menus;
     String my_recommend;
     String evaluate_average;
-    String longitude;
+
     String gate_location;
 
     @Override
@@ -91,12 +92,20 @@ public class MallDetailData {
         this.is_active = is_active;
     }
 
-    public String getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public String getRecommend_count() {
@@ -185,14 +194,6 @@ public class MallDetailData {
 
     public void setEvaluate_average(String evaluate_average) {
         this.evaluate_average = evaluate_average;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
     }
 
     public String getGate_location() {

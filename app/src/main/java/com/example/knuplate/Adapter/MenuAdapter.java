@@ -33,11 +33,14 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         holder.menu_item_tv.setText(menuDataList.get(position).getMenu_name());
 
         //좋아요 비율 계산
-        Integer cntOfLike = menuDataList.get(position).getLike();
-        Integer cntOfDislike = menuDataList.get(position).getDislike();
-        Integer ratioOfLike = cntOfLike / (cntOfDislike+cntOfLike) *100 ;
+        Integer cntOfLike = menuDataList.get(position).getLike(); //좋아요 개수
+        Integer cntOfDislike = menuDataList.get(position).getDislike(); //싫어요 개수
+        int sum = cntOfLike + cntOfDislike; //좋아요 개수+ 싫어요 개수
 
-        holder.menu_item_pb.setProgress(ratioOfLike);
+        //double ratioOfLike = cntOfLike / (cntOfDislike+cntOfLike) *100; //비율 게산한건데 필요 없는 듯
+
+        holder.menu_item_pb.setProgress(cntOfLike); //progress를 like의 개수로 지정
+        holder.menu_item_pb.setMax(sum); //최대 크기를 sum으로 지정
     }
 
     @Override

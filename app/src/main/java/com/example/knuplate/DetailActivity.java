@@ -103,7 +103,6 @@ public class DetailActivity extends AppCompatActivity {
         Integer mallId = getIntent.getIntExtra("mall_id",0);
         List<String> mallMenus = getIntent.getStringArrayListExtra("mall_menu");
 
-        //Log.d("aaa", mallId);
 
         //상세 정보 호출
         HashMap<String, String> hashMap = new HashMap<String, String>();
@@ -257,6 +256,7 @@ public class DetailActivity extends AppCompatActivity {
             if (response.isSuccessful()) {
                 MallDetailData mallDetailData = response.body();
 
+                //식당 이름, 식당 위치, 식당 종류 설정
                 mallTitle.setText(mallDetailData.getMall_name());
                 mallName.setText(mallDetailData.getMall_name());
                 mallCategory.setText(mallDetailData.getCategory_name());
@@ -264,12 +264,25 @@ public class DetailActivity extends AppCompatActivity {
 
                 Log.d(cbTAG, mallDetailData.getMall_id().toString());
 
-                //리뷰 프래그먼트로 넘김
+                //Review 프래그먼트로 식당 id 정보를 넘긴다
                 Bundle toReviewFragBundle = new Bundle();
                 toReviewFragBundle.putInt("mall_id", mallDetailData.getMall_id());
                 review_fragment.setArguments(toReviewFragBundle);
 
-                ArrayList<MenuData> menus = new ArrayList<MenuData>();
+
+                //Location 프래그먼트로 위도, 경도를 넘긴다
+                Bundle toLocationFragBundle = new Bundle();
+                toLocationFragBundle.putDouble("latitude", mallDetailData.getLatitude());
+                toLocationFragBundle.putDouble("longitude", mallDetailData.getLongitude());
+                toLocationFragBundle.putString("mallName", mallDetailData.getMall_name());
+                location_fragment.setArguments(toLocationFragBundle);
+
+                //사진 개수가 몇 개인지 확인
+                //Log.d(cbTAG, String.valueOf(mallDetailData.getFile_folder().getFiles().size()));
+
+
+                //메뉴 목록을 담는 arrayList
+                ArrayList<MenuData> menus = new ArrayList();
 
                 //메뉴 목록이 0이 아니면 getMenus()로 메뉴 목록을 가져온다
                 if (mallDetailData.getMenus() != null) {
@@ -277,11 +290,10 @@ public class DetailActivity extends AppCompatActivity {
                     Log.d("Retrofit", String.valueOf(menus));
                 }
 
-                //메뉴 프래그먼트로 넘김
+                //Menu 프래그먼트로 메뉴 정보를 넘긴다
                 Bundle toMenuFragBundle = new Bundle();
                 toMenuFragBundle.putParcelableArrayList("mall_menus", menus);
                 menu_fragment.setArguments(toMenuFragBundle);
-
 
                 getSupportFragmentManager().beginTransaction().add(R.id.frame, review_fragment).commit();
 
