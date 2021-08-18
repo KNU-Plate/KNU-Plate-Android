@@ -36,7 +36,7 @@ public class NoticeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notice);
 
         //listView = findViewById(R.id.notice_lv);
-        RetrofitClient.requestGet(cbNotice, "call_notice");
+        RetrofitClient.request(cbNotice, "call_notice", null);
 
     }
 
