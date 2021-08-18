@@ -29,6 +29,7 @@ public interface RetrofitService {
 
     @GET("api/notice")
     Call<List<NoticeData>> getNoticeData(@Query("number") int cursor);
+
     @GET("api/mall")
     Call<List<MallData>> getMallData(@QueryMap HashMap<String, String> param);
 
