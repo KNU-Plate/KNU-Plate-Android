@@ -7,10 +7,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -18,6 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.knuplate.Adapter.RestAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -98,5 +102,26 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("KeyHash", "Unable to get MessageDigest. signature=" + signature, e);
             }
         }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder d = new AlertDialog.Builder(this);
+        d.setTitle("크슐랭가이드를 종료하시겠습니까?");
+        d.setMessage("크슐랭가이드를 방문해주셔서 감사합니다 :)");
+        d.setIcon(R.drawable.main_icon);
+
+        d.setNegativeButton("종료하기", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+                finishAffinity();
+                System.runFinalization();
+                System.exit(0);
+                //finish();
+            }
+        });
+        d.show();
     }
 }
