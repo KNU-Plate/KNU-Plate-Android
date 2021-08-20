@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.knuplate.R;
 import com.example.knuplate.model.MallData;
 import com.example.knuplate.model.ReviewData;
@@ -36,9 +37,9 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
         holder.detail_nick.setText(reviewDataList.get(position).getUser_id());
 
-        //holder.detail_profile.setImageResource(arrayList.get(position).getDetail_profile());
         holder.detail_rate.setRating(reviewDataList.get(position).getEvaluate());
         holder.detail_review.setText(reviewDataList.get(position).getContents());
+
     }
 
     @Override
@@ -66,6 +67,8 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
             this.detail_profile = itemView.findViewById(R.id.detail_profile);
             this.detail_review = itemView.findViewById(R.id.detail_review);
         }
+
+
     }
 
 }

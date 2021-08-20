@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.knuplate.R;
 import com.example.knuplate.model.MallData;
 
@@ -91,8 +92,10 @@ public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestItemViewHo
 
                 //(참고) 첫 번째 인덱스의 사진 경로
                 // data.getFile_folder().getFiles().get(0).getPath()
+                Glide.with(imageView.getContext()).load(data.getFile_folder().getFiles().get(0).getPath()).into(imageView);
             }
             tv_name.setText(data.getMall_name());
+            tv_name.setSelected(true);
 
             if (data.getEvaluate_average() != null){
                 tv_rating.setText(data.getEvaluate_average().toString());

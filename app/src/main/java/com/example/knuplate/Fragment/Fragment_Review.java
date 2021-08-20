@@ -60,8 +60,6 @@ public class Fragment_Review extends Fragment {
         reviewAdapter = new ReviewAdapter();
         reviewRecyclerView.setAdapter(reviewAdapter);
 
-
-
         return v;
     }
 
