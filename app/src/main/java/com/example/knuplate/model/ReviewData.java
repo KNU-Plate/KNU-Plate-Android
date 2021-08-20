@@ -1,5 +1,7 @@
 package com.example.knuplate.model;
 
+import com.example.knuplate.model.dto.FileFolder;
+
 public class ReviewData {
     private Integer review_id;
     private String user_id;
@@ -9,6 +11,8 @@ public class ReviewData {
     private Integer evaluate;
     private String review_image;
     private String is_active;
+    FileFolder file_folder;
+
 
     @Override
     public String toString() {
@@ -87,4 +91,9 @@ public class ReviewData {
     public void setIs_active(String is_active) {
         this.is_active = is_active;
     }
+
+    public FileFolder getFile_folder() { return file_folder; }
+
+    public void setFile_folder(FileFolder file_folder) { this.file_folder = file_folder; }
+
 }

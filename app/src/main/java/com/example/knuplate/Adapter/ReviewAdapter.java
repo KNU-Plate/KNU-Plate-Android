@@ -40,6 +40,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
         holder.detail_rate.setRating(reviewDataList.get(position).getEvaluate());
         holder.detail_review.setText(reviewDataList.get(position).getContents());
 
+        holder.onBind(reviewDataList.get(position));
     }
 
     @Override
@@ -66,6 +67,19 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
             this.detail_nick = itemView.findViewById(R.id.detail_nick);
             this.detail_profile = itemView.findViewById(R.id.detail_profile);
             this.detail_review = itemView.findViewById(R.id.detail_review);
+        }
+
+        void onBind(ReviewData data){
+
+            //파일 폴더가 null이 아니고 사진이 1개 이상이면
+            if (data.getFile_folder() != null && data.getFile_folder().getFiles().size() > 0){
+                //사진을 넣도록 한다
+
+                //(참고) 첫 번째 인덱스의 사진 경로
+                // data.getFile_folder().getFiles().get(0).getPath()
+                Glide.with(detail_picture.getContext()).load(data.getFile_folder().getFiles().get(0).getPath()).into(detail_picture);
+            }
+
         }
 
 
