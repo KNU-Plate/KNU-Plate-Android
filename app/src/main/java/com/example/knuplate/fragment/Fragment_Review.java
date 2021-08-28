@@ -1,4 +1,4 @@
-package com.example.knuplate.Fragment;
+package com.example.knuplate.fragment;
 
 import android.os.Bundle;
 
@@ -14,9 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.knuplate.Adapter.ReviewAdapter;
+import com.example.knuplate.adapter.ReviewAdapter;
 import com.example.knuplate.R;
-import com.example.knuplate.model.ReviewData;
+import com.example.knuplate.data.mall.ReviewData;
 import com.example.knuplate.network.RetrofitClient;
 
 import java.util.HashMap;

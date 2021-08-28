@@ -1,4 +1,4 @@
-package com.example.knuplate.Fragment;
+package com.example.knuplate.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,10 +14,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.knuplate.Adapter.RestAdapter;
+import com.example.knuplate.adapter.RestAdapter;
 import com.example.knuplate.DetailActivity;
 import com.example.knuplate.R;
-import com.example.knuplate.model.MallData;
+import com.example.knuplate.data.mall.MallData;
 import com.example.knuplate.network.RetrofitClient;
 
 import java.util.HashMap;

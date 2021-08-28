@@ -2,7 +2,10 @@ package com.example.knuplate.network;
 
 import android.util.Log;
 
-import com.example.knuplate.model.*;
+import com.example.knuplate.data.*;
+import com.example.knuplate.data.mall.MallData;
+import com.example.knuplate.data.mall.MallDetailData;
+import com.example.knuplate.data.mall.ReviewData;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

@@ -1,4 +1,4 @@
-package com.example.knuplate.Fragment;
+package com.example.knuplate.fragment;
 
 import  android.os.Bundle;
 import android.util.Log;
@@ -16,12 +16,12 @@ import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
 import net.daum.mf.map.api.MapView;
 
-public class Fragment_Location extends Fragment {
+public class LocationFragment extends Fragment {
     double latitude;
     double longitude;
     String mallName;
-    public static Fragment_Location newInstance() {
-        return new Fragment_Location();
+    public static LocationFragment newInstance() {
+        return new LocationFragment();
     }
 
     @Override

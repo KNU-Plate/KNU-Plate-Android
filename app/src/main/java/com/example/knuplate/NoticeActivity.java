@@ -6,18 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.knuplate.Adapter.NoticeAdapter;
-import com.example.knuplate.Adapter.ReviewAdapter;
-import com.example.knuplate.model.NoticeData;
-import com.example.knuplate.model.ReviewData;
+import com.example.knuplate.adapter.NoticeAdapter;
+import com.example.knuplate.data.NoticeData;
 import com.example.knuplate.network.RetrofitClient;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;

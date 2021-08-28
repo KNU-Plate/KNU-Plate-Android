@@ -1,4 +1,4 @@
-package com.example.knuplate.Fragment;
+package com.example.knuplate.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -12,20 +12,20 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.knuplate.Adapter.MenuAdapter;
+import com.example.knuplate.adapter.MenuAdapter;
 import com.example.knuplate.R;
-import com.example.knuplate.model.dto.MenuData;
+import com.example.knuplate.data.mall.MenuData;
 
 import java.util.ArrayList;
 
-public class Fragment_Menu extends Fragment {
+public class MenuFragment extends Fragment {
 
     ArrayList<MenuData> menus;
     RecyclerView menuRecyclerView;
     MenuAdapter menuAdapter;
 
-    public static Fragment_Menu newInstance() {
-        return new Fragment_Menu();
+    public static MenuFragment newInstance() {
+        return new MenuFragment();
     }
 
     @Override

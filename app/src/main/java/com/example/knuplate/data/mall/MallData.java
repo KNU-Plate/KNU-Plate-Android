@@ -1,8 +1,4 @@
-package com.example.knuplate.model;
-
-import android.graphics.Bitmap;
-
-import com.example.knuplate.model.dto.FileFolder;
+package com.example.knuplate.data.mall;
 
 public class MallData {
     int mall_id;

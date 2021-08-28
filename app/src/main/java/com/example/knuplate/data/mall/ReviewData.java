@@ -1,6 +1,4 @@
-package com.example.knuplate.model;
-
-import com.example.knuplate.model.dto.FileFolder;
+package com.example.knuplate.data.mall;
 
 public class ReviewData {
     private Integer review_id;

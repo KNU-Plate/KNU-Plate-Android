@@ -1,4 +1,4 @@
-package com.example.knuplate.model;
+package com.example.knuplate.data;
 
 import com.google.gson.annotations.SerializedName;
 

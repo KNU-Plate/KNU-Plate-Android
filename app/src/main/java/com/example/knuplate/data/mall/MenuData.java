@@ -1,4 +1,4 @@
-package com.example.knuplate.model.dto;
+package com.example.knuplate.data.mall;
 
 import android.os.Parcel;
 import android.os.Parcelable;

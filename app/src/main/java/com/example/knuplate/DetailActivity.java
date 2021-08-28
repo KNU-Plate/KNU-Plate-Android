@@ -32,12 +32,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.knuplate.Adapter.UriImageAdapter;
-import com.example.knuplate.Fragment.Fragment_Location;
-import com.example.knuplate.Fragment.Fragment_Menu;
-import com.example.knuplate.Fragment.Fragment_Review;
-import com.example.knuplate.model.MallDetailData;
-import com.example.knuplate.model.dto.MenuData;
+import com.example.knuplate.adapter.UriImageAdapter;
+import com.example.knuplate.fragment.LocationFragment;
+import com.example.knuplate.fragment.MenuFragment;
+import com.example.knuplate.fragment.Fragment_Review;
+import com.example.knuplate.data.mall.MallDetailData;
+import com.example.knuplate.data.mall.MenuData;
 import com.example.knuplate.network.RetrofitClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -118,8 +118,8 @@ public class DetailActivity extends AppCompatActivity {
 
         //TabLayout-FragmentLayout
         review_fragment = new Fragment_Review();
-        menu_fragment = new Fragment_Menu();
-        location_fragment = new Fragment_Location();
+        menu_fragment = new MenuFragment();
+        location_fragment = new LocationFragment();
 
         //사진 리사이클러뷰
         recyclerView = findViewById(R.id.recyclerView);

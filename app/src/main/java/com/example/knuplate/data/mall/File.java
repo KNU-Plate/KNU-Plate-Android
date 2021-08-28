@@ -1,4 +1,4 @@
-package com.example.knuplate.model.dto;
+package com.example.knuplate.data.mall;
 
 public class File {
     private String path;

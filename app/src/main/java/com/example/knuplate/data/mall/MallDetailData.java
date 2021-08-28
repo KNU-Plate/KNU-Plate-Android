@@ -1,7 +1,4 @@
-package com.example.knuplate.model;
-
-import com.example.knuplate.model.dto.FileFolder;
-import com.example.knuplate.model.dto.MenuData;
+package com.example.knuplate.data.mall;
 
 import java.util.ArrayList;
 

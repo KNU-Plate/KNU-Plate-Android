@@ -1,4 +1,4 @@
-package com.example.knuplate.Adapter;
+package com.example.knuplate.adapter;
 
 
 import android.view.LayoutInflater;
@@ -11,8 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.knuplate.R;
-import com.example.knuplate.model.ReviewData;
-import com.example.knuplate.model.dto.MenuData;
+import com.example.knuplate.data.mall.MenuData;
 
 import java.util.ArrayList;
 

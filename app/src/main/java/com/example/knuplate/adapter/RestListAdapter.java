@@ -1,18 +1,12 @@
-package com.example.knuplate.Adapter;
+package com.example.knuplate.adapter;
 
 import android.os.Bundle;
-import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.knuplate.Fragment.RestListFragment;
+import com.example.knuplate.fragment.RestListFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;

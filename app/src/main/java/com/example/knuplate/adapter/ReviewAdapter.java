@@ -1,4 +1,4 @@
-package com.example.knuplate.Adapter;
+package com.example.knuplate.adapter;
 
 
 import android.view.LayoutInflater;
@@ -13,11 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.knuplate.R;
-import com.example.knuplate.model.MallData;
-import com.example.knuplate.model.ReviewData;
+import com.example.knuplate.data.mall.ReviewData;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>{
     private ArrayList<ReviewData> reviewDataList = new ArrayList<>();

@@ -1,6 +1,4 @@
-package com.example.knuplate.model;
-
-import com.google.gson.annotations.SerializedName;
+package com.example.knuplate.data;
 
 public class NoticeData {
 

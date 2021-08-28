@@ -24,7 +24,6 @@
 
         </activity>
         <activity android:name=".ReviewPostActivity" />
-        <activity android:name=".PostLocaActivity" />
         <activity android:name=".DetailActivity">
 
         </activity>

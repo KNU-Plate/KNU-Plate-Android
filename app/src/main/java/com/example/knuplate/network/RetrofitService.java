@@ -1,7 +1,10 @@
 package com.example.knuplate.network;
 
-import com.example.knuplate.model.*;
-import com.example.knuplate.model.UserData;
+import com.example.knuplate.data.*;
+import com.example.knuplate.data.UserData;
+import com.example.knuplate.data.mall.MallData;
+import com.example.knuplate.data.mall.MallDetailData;
+import com.example.knuplate.data.mall.ReviewData;
 
 import java.util.HashMap;
 import java.util.List;

@@ -1,6 +1,5 @@
-package com.example.knuplate.Adapter;
+package com.example.knuplate.adapter;
 
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.knuplate.R;
-import com.example.knuplate.model.MallData;
+import com.example.knuplate.data.mall.MallData;
 
-import java.net.URI;
 import java.util.ArrayList;
 
 public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestItemViewHolder> {
