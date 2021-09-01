@@ -17,8 +17,9 @@ import java.util.ArrayList;
 
 public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestItemViewHolder> {
 
-    private ArrayList<MallData> list=new ArrayList<>();
+    private ArrayList<MallData> list = new ArrayList<>();
     private OnItemClickListener mListener = null; //리스너 객체 참조를 저장
+
     @NonNull
     @Override
     public RestItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -39,20 +40,20 @@ public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestItemViewHo
         return list.size();
     }
 
-    public void addItem(MallData mallData){
+    public void addItem(MallData mallData) {
         list.add(mallData);
     }
 
-    public void setOnItemClickListener(OnItemClickListener listener){
+    public void setOnItemClickListener(OnItemClickListener listener) {
         this.mListener = listener;
     }
 
 
-    public interface OnItemClickListener{ //커스텀 리스너 인터페이스
+    public interface OnItemClickListener { //커스텀 리스너 인터페이스
         void onItemClick(View v, int pos);
     }
 
-    class RestItemViewHolder extends RecyclerView.ViewHolder{
+    class RestItemViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView imageView;
         private TextView tv_name;
@@ -65,37 +66,33 @@ public class RestAdapter extends RecyclerView.Adapter<RestAdapter.RestItemViewHo
             tv_name = itemView.findViewById(R.id.tv_restName);
             tv_rating = itemView.findViewById(R.id.tv_rating);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition(); //어댑터 내 아이템의 위치 리턴
-                    if (position != RecyclerView.NO_POSITION) {
-                        // TODO : use pos.
-                        //MallData mallData = list.get(position);
+            itemView.setOnClickListener(v -> {
+                int position = getAdapterPosition(); //어댑터 내 아이템의 위치 리턴
+                if (position != RecyclerView.NO_POSITION) {
+                    // TODO : use pos.
+                    //MallData mallData = list.get(position);
 
-                        if(mListener != null){
-                            mListener.onItemClick(v, position);
-                        }
-
+                    if (mListener != null) {
+                        mListener.onItemClick(v, position);
                     }
+
                 }
             });
         }
 
-        void onBind(MallData data){
+        void onBind(MallData data) {
 
             //파일 폴더가 null이 아니고 사진이 1개 이상이면
-            if (data.getFile_folder() != null && data.getFile_folder().getFiles().size() > 0){
+            if (data.getFile_folder() != null && data.getFile_folder().getFiles().size() > 0) {
                 //사진을 넣도록 한다
 
-                //(참고) 첫 번째 인덱스의 사진 경로
-                // data.getFile_folder().getFiles().get(0).getPath()
                 Glide.with(imageView.getContext()).load(data.getFile_folder().getFiles().get(0).getPath()).into(imageView);
             }
+
             tv_name.setText(data.getMall_name());
             tv_name.setSelected(true);
 
-            if (data.getEvaluate_average() != null){
+            if (data.getEvaluate_average() != null) {
                 tv_rating.setText(data.getEvaluate_average().toString());
             }
 

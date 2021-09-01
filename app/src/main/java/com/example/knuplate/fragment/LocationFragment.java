@@ -36,7 +36,7 @@ public class LocationFragment extends Fragment {
         Log.d("retrofit", String.valueOf(latitude));
         Log.d("retrofit", String.valueOf(longitude));
 
-        ViewGroup mapViewContainer = (ViewGroup) v.findViewById(R.id.map_view);
+        ViewGroup mapViewContainer = v.findViewById(R.id.map_view);
         MapView mapView = new MapView(getActivity());
 
 
@@ -50,6 +50,7 @@ public class LocationFragment extends Fragment {
         marker.setTag(0);
         marker.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
         marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+        marker.setShowDisclosureButtonOnCalloutBalloon(false);
 
         mapView.addPOIItem(marker);
 

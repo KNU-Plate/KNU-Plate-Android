@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <FrameLayout
         android:id="@+id/main"
-        android:layout_above="@id/bottom_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:layout_above="@id/bottom_menu">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,8 +20,8 @@
                 android:id="@+id/restListTap"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabMode="scrollable"
                 app:tabIndicatorColor="@color/title_color"
+                app:tabMode="scrollable"
                 app:tabSelectedTextColor="@color/title_color">
 
                 <com.google.android.material.tabs.TabItem
@@ -60,7 +60,6 @@
                     android:text="일식" />
 
             </com.google.android.material.tabs.TabLayout>
-
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/RestListViewPager"
                 android:layout_width="match_parent"
@@ -69,26 +68,26 @@
 
         </LinearLayout>
 
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/RestListFabBtn"
+            android:id="@+id/fab_add_restaurant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:clickable="true"
             android:backgroundTint="@color/title_color"
+            android:clickable="true"
             app:borderWidth="0dp"
-            android:src="@drawable/add_floatbutton" />
-
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_add"
+            tools:ignore="VectorDrawableCompat" />
 
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/main"
-        android:id="@+id/container"></FrameLayout>
+        android:layout_below="@id/main"></FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_menu"
@@ -99,7 +98,7 @@
         app:itemIconTint="@color/title_color"
         app:itemTextColor="@color/title_color"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottombar_menu"/>
+        app:menu="@menu/bottombar_menu" />
 </RelativeLayout>
 
 

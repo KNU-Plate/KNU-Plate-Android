@@ -35,7 +35,7 @@ import android.widget.Toast;
 import com.example.knuplate.adapter.UriImageAdapter;
 import com.example.knuplate.fragment.LocationFragment;
 import com.example.knuplate.fragment.MenuFragment;
-import com.example.knuplate.fragment.Fragment_Review;
+import com.example.knuplate.fragment.ReviewFragment;
 import com.example.knuplate.data.mall.MallDetailData;
 import com.example.knuplate.data.mall.MenuData;
 import com.example.knuplate.network.RetrofitClient;
@@ -117,7 +117,7 @@ public class DetailActivity extends AppCompatActivity {
         RetrofitClient.request(cbMallDetail, "call_mall_detail", hashMap);
 
         //TabLayout-FragmentLayout
-        review_fragment = new Fragment_Review();
+        review_fragment = new ReviewFragment();
         menu_fragment = new MenuFragment();
         location_fragment = new LocationFragment();
 

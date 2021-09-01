@@ -6,6 +6,7 @@ import com.example.knuplate.data.*;
 import com.example.knuplate.data.mall.MallData;
 import com.example.knuplate.data.mall.MallDetailData;
 import com.example.knuplate.data.mall.ReviewData;
+import com.example.knuplate.data.search.SearchData;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -41,7 +42,7 @@ public class RetrofitClient {
                     .build();
         }
 
-        if( service == null){
+        if (service == null) {
             service = retrofit.create(RetrofitService.class);
         }
 
@@ -50,32 +51,37 @@ public class RetrofitClient {
             call.enqueue(callback);
         }
 
-        if("call_signup".equals(gubun)){
+        if ("call_signup".equals(gubun)) {
             Call<SignUpData> call = service.postSignUpData(hashMap);
             call.enqueue(callback);
         }
 
-        if("call_mall_list".equals(gubun)){
+        if ("call_mall_list".equals(gubun)) {
             Call<List<MallData>> call = service.getMallData(hashMap);
             call.enqueue(callback);
         }
 
-        if("call_mall_detail".equals(gubun)){
+        if ("call_mall_detail".equals(gubun)) {
             String mallId = hashMap.get("mall_id");
             Integer mallId_Int = Integer.parseInt(mallId);
             Call<MallDetailData> call = service.getMallDetailData(mallId_Int);
             call.enqueue(callback);
         }
 
-        if("call_review".equals(gubun)){
+        if ("call_review".equals(gubun)) {
             String mallId = hashMap.get("mall_id");
             Integer mallId_Int = Integer.parseInt(mallId);
             Call<List<ReviewData>> call = service.getReviewData(mallId_Int, "N");
             call.enqueue(callback);
         }
 
-        if("call_notice".equals(gubun)) {
+        if ("call_notice".equals(gubun)) {
             Call<List<NoticeData>> call = service.getNoticeData(0);
+            call.enqueue(callback);
+        }
+
+        if ("call_search".equals(gubun)) {
+            Call<SearchData> call = service.getSearchData(hashMap);
             call.enqueue(callback);
         }
 

@@ -73,8 +73,6 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
             if (data.getFile_folder() != null && data.getFile_folder().getFiles().size() > 0){
                 //사진을 넣도록 한다
 
-                //(참고) 첫 번째 인덱스의 사진 경로
-                // data.getFile_folder().getFiles().get(0).getPath()
                 Glide.with(detail_picture.getContext()).load(data.getFile_folder().getFiles().get(0).getPath()).into(detail_picture);
             }
 

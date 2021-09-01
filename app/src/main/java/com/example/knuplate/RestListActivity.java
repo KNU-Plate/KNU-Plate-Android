@@ -50,11 +50,11 @@ public class RestListActivity extends AppCompatActivity {
         }).attach();
 
         //FloatingButton
-        FloatingActionButton fab1 = findViewById(R.id.RestListFabBtn);
+        FloatingActionButton fab1 = findViewById(R.id.fab_add_restaurant);
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RestListActivity.this, ReviewPostActivity.class);
+                Intent intent = new Intent(getApplicationContext(), AddMallActivity.class);
                 startActivity(intent);
             }
         });

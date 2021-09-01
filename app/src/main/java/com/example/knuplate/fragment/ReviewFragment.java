@@ -26,15 +26,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Fragment_Review extends Fragment {
+public class ReviewFragment extends Fragment {
 
     View v;
     Integer mallId;
     RecyclerView reviewRecyclerView;
     ReviewAdapter reviewAdapter;
 
-    public static Fragment_Review newInstance() {
-        return new Fragment_Review();
+    public static ReviewFragment newInstance() {
+        return new ReviewFragment();
     }
 
     @Override

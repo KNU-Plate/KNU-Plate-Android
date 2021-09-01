@@ -5,6 +5,7 @@ import com.example.knuplate.data.UserData;
 import com.example.knuplate.data.mall.MallData;
 import com.example.knuplate.data.mall.MallDetailData;
 import com.example.knuplate.data.mall.ReviewData;
+import com.example.knuplate.data.search.SearchData;
 
 import java.util.HashMap;
 import java.util.List;
@@ -41,5 +42,8 @@ public interface RetrofitService {
 
     @GET("api/review")
     Call<List<ReviewData>> getReviewData(@Query("mall_id") int mall_id, @Query("myReview") String myReview);
+
+    @GET("api/mall/address")
+    Call<SearchData> getSearchData(@QueryMap HashMap<String, String> param);
 
 }
